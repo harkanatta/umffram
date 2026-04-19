@@ -1,0 +1,67 @@
+{{ define "main" }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+<div class="ph3 ph5-l pv4">
+  <h1 class="f2 fw6 mb4">{{ .Title }}</h1>
+  {{ with .Content }}<div class="lh-copy mb4">{{ . }}</div>{{ end }}
+
+  {{ $baseDir := "static/images/gallery" }}
+  {{ $years := slice }}
+  {{ range (readDir $baseDir) }}
+    {{ if .IsDir }}{{ $years = $years | append .Name }}{{ end }}
+  {{ end }}
+
+  {{ if not $years }}
+    <p class="i gray">Engar myndir til að sýna.</p>
+  {{ else }}
+    {{ range sort $years "value" "desc" }}
+      {{ $year := . }}
+      {{ $yearDir := printf "%s/%s" $baseDir $year }}
+      {{ $images := slice }}
+      {{ range (readDir $yearDir) }}
+        {{ $ext := lower (path.Ext .Name) }}
+        {{ if or (eq $ext ".jpg") (eq $ext ".jpeg") (eq $ext ".png") (eq $ext ".webp") (eq $ext ".gif") }}
+          {{ $images = $images | append .Name }}
+        {{ end }}
+      {{ end }}
+      {{ if $images }}
+      <section class="gallery-year mb5">
+        <h2 class="f3 fw6 bb pb2 mb3">{{ $year }}</h2>
+        <div class="masonry-grid" data-gallery="{{ $year }}">
+          {{ range $images }}
+          <a href="/images/gallery/{{ $year }}/{{ . }}"
+             class="glightbox masonry-item"
+             data-gallery="{{ $year }}"
+             data-description=" ">
+            <img src="/images/gallery/{{ $year }}/{{ . }}"
+                 alt="Mynd {{ $year }}"
+                 loading="lazy">
+          </a>
+          {{ end }}
+        </div>
+      </section>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  document.querySelectorAll('[data-gallery]').forEach(function(section) {
+    var gallery = section.getAttribute('data-gallery');
+    if (section.classList.contains('masonry-grid')) return;
+    GLightbox({ selector: '[data-gallery="' + gallery + '"]' });
+  });
+
+  // One lightbox per year group
+  document.querySelectorAll('.masonry-grid').forEach(function(grid) {
+    var year = grid.getAttribute('data-gallery');
+    GLightbox({
+      selector: '.masonry-grid[data-gallery="' + year + '"] .glightbox',
+      touchNavigation: true,
+      loop: true,
+      zoomable: true
+    });
+  });
+</script>
+{{ end }}

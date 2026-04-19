@@ -1,0 +1,22 @@
+{{ $featured_image := partial "func/GetFeaturedImage.html" . }}
+{{ if $featured_image }}
+  <header class="cover bg-top" style="background-image: url('{{ $featured_image }}');">
+    <div class="{{ .Site.Params.cover_dimming_class | default "bg-black-60" }}" style="padding-top:0.5rem;padding-bottom:0.5rem;">
+      {{ partial "site-navigation.html" .}}
+      <div style="text-align:center;padding:0.5rem 1rem;">
+        <h1 style="font-size:2rem;font-weight:300;margin:0;line-height:1.2;">{{ .Title | default .Site.Title }}</h1>
+        {{ with .Params.description }}<h2 style="font-size:1.1rem;font-weight:300;margin:0.25rem 0 0;">{{ . }}</h2>{{ end }}
+      </div>
+    </div>
+  </header>
+{{ else }}
+  <header>
+    <div class="{{ .Site.Params.background_color_class | default "bg-black" }}" style="padding-top:0.25rem;padding-bottom:0.25rem;">
+      {{ partial "site-navigation.html" . }}
+      <div style="text-align:center;padding:0.4rem 1rem;">
+        <h1 style="font-size:2rem;font-weight:300;margin:0;line-height:1.2;">{{ .Title | default .Site.Title }}</h1>
+        {{ with .Params.description }}<h2 style="font-size:1.1rem;font-weight:300;margin:0.25rem 0 0;">{{ . }}</h2>{{ end }}
+      </div>
+    </div>
+  </header>
+{{ end }}

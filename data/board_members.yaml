@@ -1,0 +1,11 @@
+# data/board_members.yaml
+- name: "Jón Jónsson"
+  position: "Formaður"
+  photo: "/images/jon-jonsson.jpg"
+- name: "Anna Ásdóttir"
+  position: "Varaformaður"
+  photo: "/images/anna-asdottir.jpg"
+- name: "Gunnar Gunnarsson"
+  position: "Gjaldkeri"
+  photo: "/images/gunnar-gunnarsson.jpg"
+# Add more board members as needed

@@ -1,0 +1,48 @@
+baseURL = 'https://umffram.netlify.app/'
+languageCode = 'is-is'
+title = 'Umf Fram á Skagaströnd'
+theme = 'ananke'
+
+[params]
+  mainSections = ["posts"]
+  text_color = ""
+  author = ""
+  favicon = "/images/favicon.ico"
+  site_logo = "/images/logo.png"
+  description = "Íþróttafélag á Skagaströnd"
+  background_color_class = "bg-black"
+  recent_posts_number = 3
+  custom_css = ["ananke/css/custom.css"]
+
+[[params.ananke_socials]]
+name = "facebook"
+url = "https://www.facebook.com/profile.php?id=61550946432238"
+
+[menu]
+  [[menu.main]]
+ name = "Heim"
+ url = "/"
+ weight = 1
+  [[menu.main]]
+ name = "Um okkur"
+ url = "/about/"
+ weight = 2
+  [[menu.main]]
+ name = "Stjórn"
+ url = "/stjorn/"
+ weight = 3
+  [[menu.main]]
+ name = "Fundargerðir"
+ url = "/documents/"
+ weight = 4
+  [[menu.main]]
+ name = "Myndir"
+ url = "/gallery/"
+ weight = 5
+ [[menu.main]]
+    name = "Fréttir"
+    url = "/posts/"
+    weight = 6
+
+[pagination]
+  pagerSize = 3
