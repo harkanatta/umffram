@@ -11,3 +11,4 @@ draft = false
 | Páll Ingason | Karfa og blak |
 | Finnbogi Guðmundsson | Fótbolti |
 | Sigrún Líndal Þrastardóttir | Frjálsar |
+| Þórey Fjóla Aradóttir | Hreysti |
