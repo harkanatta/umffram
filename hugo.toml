@@ -20,29 +20,46 @@ url = "https://www.facebook.com/profile.php?id=61550946432238"
 
 [menu]
   [[menu.main]]
- name = "Heim"
- url = "/"
- weight = 1
+    name = "Heim"
+    url = "/"
+    weight = 1
+
   [[menu.main]]
- name = "Um okkur"
- url = "/about/"
- weight = 2
+    name = "Um okkur"
+    url = "/about/"
+    weight = 2
+
   [[menu.main]]
- name = "Stjórn"
- url = "/stjorn/"
- weight = 3
+    name = "Stjórn"
+    url = "/stjorn/"
+    weight = 1
+    parent = "Um okkur"
+
   [[menu.main]]
- name = "Fundargerðir"
- url = "/documents/"
- weight = 4
+    name = "Þjálfarar"
+    url = "/thjalfarar/"
+    weight = 2
+    parent = "Um okkur"
+
   [[menu.main]]
- name = "Myndir"
- url = "/gallery/"
- weight = 5
- [[menu.main]]
+    name = "Fundargerðir"
+    url = "/documents/"
+    weight = 4
+
+  [[menu.main]]
+    name = "Myndir"
+    url = "/gallery/"
+    weight = 5
+
+  [[menu.main]]
     name = "Fréttir"
     url = "/posts/"
     weight = 6
+
+  [[menu.main]]
+    name = "Stundaskrá"
+    url = "/stundaskra/"
+    weight = 7
 
 [pagination]
   pagerSize = 3

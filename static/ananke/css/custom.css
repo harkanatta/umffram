@@ -61,6 +61,64 @@ header .f-subheadline-l {
   text-decoration: underline;
 }
 
+/* Navigation dropdown */
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem;
+  margin: 0;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: block;
+  font-size: 1.6rem;
+  color: #000;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  line-height: 1.5;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #f0df20;
+  list-style: none;
+  padding: 0.4rem 0;
+  margin: 0;
+  min-width: 180px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.4rem;
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown li a:hover {
+  background: rgba(0,0,0,0.08);
+}
+
+.has-dropdown:hover .dropdown {
+  display: block;
+}
+
 /* Photo gallery — uniform thumbnails */
 .masonry-grid {
   display: grid;

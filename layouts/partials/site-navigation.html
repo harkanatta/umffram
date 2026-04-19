@@ -1,0 +1,41 @@
+<nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="{{ .Site.Home.RelPermalink }}" class="f3 fw2 no-underline dib">
+      {{ with .Site.Params.site_logo }}
+        <img src="{{ relURL . }}" class="w100 mw5-ns" alt="{{ $.Site.Title }}" style="max-height:60px;width:auto;" />
+      {{ else }}
+        {{ .Site.Title }}
+      {{ end }}
+    </a>
+    <div class="flex-l items-center">
+      {{ if .Site.Menus.main }}
+        <ul class="list pl0 mr3 mb0 flex flex-wrap items-center">
+          {{ range .Site.Menus.main }}
+            {{ if not .Parent }}
+              {{ $children := .Children }}
+              <li class="dib pr3 nav-item{{ if $children }} has-dropdown{{ end }}" style="position:relative;">
+                <a class="f5 f4-ns fw4 no-underline" href="{{ .URL }}">{{ .Name }}</a>
+                {{ if $children }}
+                <ul class="dropdown list pl0" style="display:none;position:absolute;top:100%;left:0;background:#f0df20;min-width:160px;box-shadow:0 4px 8px rgba(0,0,0,0.15);z-index:100;padding:0.4rem 0;">
+                  {{ range $children }}
+                  <li><a class="db ph3 pv2 no-underline f5 fw4" href="{{ .URL }}" style="white-space:nowrap;">{{ .Name }}</a></li>
+                  {{ end }}
+                </ul>
+                {{ end }}
+              </li>
+            {{ end }}
+          {{ end }}
+        </ul>
+      {{ end }}
+      {{ partialCached "social-follow.html" . }}
+    </div>
+  </div>
+</nav>
+
+<script>
+document.querySelectorAll('.has-dropdown').forEach(function(item) {
+  var dropdown = item.querySelector('.dropdown');
+  item.addEventListener('mouseenter', function() { dropdown.style.display = 'block'; });
+  item.addEventListener('mouseleave', function() { dropdown.style.display = 'none'; });
+});
+</script>
