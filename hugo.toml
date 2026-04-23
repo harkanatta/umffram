@@ -61,5 +61,10 @@ url = "https://www.facebook.com/profile.php?id=61550946432238"
     url = "/stundaskra/"
     weight = 7
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [pagination]
   pagerSize = 3
