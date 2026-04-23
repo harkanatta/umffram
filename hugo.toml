@@ -12,6 +12,7 @@ theme = 'ananke'
   description = "Íþróttafélag á Skagaströnd"
   background_color_class = "bg-black"
   recent_posts_number = 3
+  recent_copy = "Fréttir"
   custom_css = ["ananke/css/custom.css"]
 
 [[params.ananke_socials]]
