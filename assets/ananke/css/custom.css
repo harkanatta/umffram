@@ -7,7 +7,7 @@ body, nav, h1, h2, h3, h4, h5, h6, p, a, li, td, th {
 
 /* Background color */
 .bg-black, .bg-black-60 {
-  background-color: #f0df20 !important;
+  background-color: #f5e000 !important;
 }
 
 /* Text colors for contrast */
@@ -100,7 +100,7 @@ header .f-subheadline-l {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #f0df20;
+  background: #f5e000;
   list-style: none;
   padding: 0.4rem 0;
   margin: 0;
