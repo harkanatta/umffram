@@ -1,24 +1,24 @@
 ---
-title: "Nýr viðburður hjá Umf Fram"
-date: 2024-09-09T15:30:00+01:00
+title: "Ný stjórn Umf Fram"
+date: 2026-04-18T12:00:00+00:00
 draft: false
-tags: ["viðburðir", "íþróttir"]
-categories: ["Fréttir"]
-language: is
 ---
+Aðalfundur Umf. Fram var haldinn 20. febrúar og var kjörin ný stjórn. Fráfarandi stjórn Umf. Fram gengur stolt frá borði og réttir lyklana áfram í hendur nýrrar stjórnar.
 
-# Nýr viðburður hjá Umf Fram
+Við þökkum **Péturínu**, **Ástrós Villu** og **Helenu Möru** fyrir ómetanlegt starf og allt sem þær hafa lagt af mörkum í þjónustu félagsins.
 
-Umf Fram á Skagaströnd er að skipuleggja nýjan spennandi viðburð fyrir alla fjölskylduna!
+Kærar þakkir til allra iðkenda, þjálfara, foreldra og velunnara - án ykkar væri ekkert ungmennafélag.
 
-## Um viðburðinn
+Fráfarandi stjórn óskar nýkjörinni stjórn velfarnaðar í öllum þeirra störfum.
 
-Viðburðurinn mun fara fram næsta laugardag í íþróttahúsinu. Hér eru nokkur atriði sem þú getur búist við:
+**Ný stjórn:**
 
-- Skemmtilegar íþróttakeppnir fyrir börn og fullorðna
-- Heilsusamlegar veitingar
-- Tónlistaratriði frá heimamönnum
+| Nafn | Hlutverk |
+|------|----------|
+| Valtýr Sigurðsson | Stjórnarformaður |
+| Guðlaugur Siggi Hannesson | Gjaldkeri |
+| Ingimar Vignisson | Ritari |
+| Garðar Grétarsson | Stjórnarmaður |
+| Arnar Ólafur Viggósson | Stjórnarmaður |
 
-![Íþróttahúsið](/images/ithrottahus.jpg)
-
-Við hlökkum til að sjá ykkur öll þar!
+**Varastjórn:** Sigrún Líndal Þrastardóttir
