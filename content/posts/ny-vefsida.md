@@ -13,3 +13,15 @@ Við þökkum sérstaklega **Péturínu**, **Ástrós Villu** og **Helenu Möru*
 Kærar þakkir til allra iðkenda, þjálfara, foreldra og velunnara — án ykkar væri ekkert ungmennafélag.
 
 Fráfarandi stjórn óskar nýkjörinni stjórn velfarnaðar í öllum þeirra störfum.
+
+**Ný stjórn:**
+
+| Nafn | Hlutverk |
+|------|----------|
+| Valtýr Sigurðsson | Stjórnarformaður |
+| Guðlaugur Siggi Hannesson | Gjaldkeri |
+| Ingimar Vignisson | Ritari |
+| Garðar Grétarsson | Stjórnarmaður |
+| Arnar Ólafur Viggósson | Stjórnarmaður |
+
+**Varastjórn:** Sigrún Líndal Þrastardóttir
