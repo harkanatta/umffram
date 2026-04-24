@@ -14,8 +14,10 @@
         {{- .Title -}}
       </h1>
       {{ if not .Date.IsZero }}
+      {{ $months := slice "janúar" "febrúar" "mars" "apríl" "maí" "júní" "júlí" "ágúst" "september" "október" "nóvember" "desember" }}
+      {{ $month := index $months (sub (.Date.Month | int) 1) }}
       <time class="f6 mv4 dib tracked" {{ printf `datetime="%s"` (.Date.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
-        {{- .Date | time.Format (default "January 2, 2006" .Site.Params.date_format) -}}
+        {{- printf "%d. %s %d" .Date.Day $month .Date.Year -}}
       </time>
       {{ end }}
     </header>
