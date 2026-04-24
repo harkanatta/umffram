@@ -126,25 +126,6 @@ header .f-subheadline-l {
   display: block;
 }
 
-/* Post cards */
-.relative.w-100.mb4 {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  padding: 1.25rem 1.5rem;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-}
-
-.relative.w-100.mb4:hover {
-  box-shadow: 0 6px 24px rgba(0,0,0,0.13);
-  transform: translateY(-2px);
-}
-
-/* Page body background */
-body {
-  background-color: #f7f7f5 !important;
-}
-
 /* Photo gallery — uniform thumbnails */
 .masonry-grid {
   display: grid;
