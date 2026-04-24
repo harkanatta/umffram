@@ -2,6 +2,7 @@
 title = "Á Fram Atwork – Skagastrandarhlaupið 2026"
 date = 2026-04-24T00:00:00Z
 draft = false
+featured_image = "/images/skagastrandarhlaupid.jpg"
 description = "Skagastrandarhlaupið fer fram sunnudaginn 19. júlí 2026. Boðið er upp á 5 km, 10 km, 1 km skemmtisokk og 13,5 km ATWORK MEGA TRAIL utanvegahlaup."
 +++
 
