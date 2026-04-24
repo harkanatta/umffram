@@ -1,3 +1,10 @@
+/* Modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body, nav, h1, h2, h3, h4, h5, h6, p, a, li, td, th {
+  font-family: 'Inter', sans-serif !important;
+}
+
 /* Background color */
 .bg-black, .bg-black-60 {
   background-color: #f0df20 !important;
