@@ -18,7 +18,7 @@ Skagastrandarhlaupið er samvinnuverkefni ATWORK og Umf Fram og allur ágóði r
 | 5 km og 10 km götuhlaup | Kl. 14:10 |
 | 1 km skemmtisokk | - |
 
-ATWORK MEGA TRAIL er ræst frá höfninni og leiðin liggur upp að Spákonufelli, hringinn í kringum fellið og til baka að höfninni. 5 km og 10 km hlaupið er einn og tveir hringir um götur Skagastrandar. 1 km skemmtisokk er kjörið fyrir yngstu hlauparana en foreldrar eru hvattir til að hlaupa við hlið unganna sinna.
+ATWORK MEGA TRAIL er ræst frá höfninni og leiðin liggur upp að Spákonufelli, hringinn í kringum fellið og til baka að höfninni. 5 km og 10 km hlaupið er einn og tveir hringir um götur Skagastrandar. 1 km skemmtisokk er kjörið fyrir yngstu hlauparana en foreldrar eru hvattir til að hlaupa við hlið barna sinna.
 
 Götuhlaupin eru FRÍ vottuð. Aldurstakmark er 18 ára (f. 2008) í utanvegahlaupið, ekkert aldurstakmark í götuhlaupin.
 
