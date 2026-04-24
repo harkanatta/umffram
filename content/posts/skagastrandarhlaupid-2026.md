@@ -41,11 +41,9 @@ Spákonuhof og veitingahús staðarins verða opin. Hægt er að panta tjaldstæ
 
 ## Skráning
 
-Skráning fer fram á **[netskraning.is](https://www.netskraning.is)** - skráningartími til kl. 21:00 þann 18. júlí. Afhending keppnisnúmera í íþróttahúsinu frá kl. 12:00 þann 19. júlí.
+Skráning fer fram á **[netskraning.is](https://www.netskraning.is)** - skráningartími er til kl. 21:00 þann 18. júlí.
 
 ## Nánari upplýsingar
 
 - **Netfang:** frida@heilsutorg.is
 - **Sími:** Fríða Rún Þórðardóttir – 898 8798
-- **Facebook:** aframatwork_skagastrandahlaupið
-- **Instagram:** aframatwork_skagastrandahlaupið
