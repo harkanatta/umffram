@@ -1,27 +1,15 @@
 ---
-title: "Ný vefsíða Umf Fram á Skagaströnd"
+title: "Ný stjórn Umf Fram"
 date: 2026-04-18T12:00:00+00:00
 draft: false
-tags: ["fréttir", "vefsíða"]
-categories: ["Fréttir"]
 ---
 
-# Ný vefsíða Umf Fram á Skagaströnd
+Nú er komið að kveðjustund. Fráfarandi stjórn Umf Fram gengur stolt frá borði og færir kyndilinn áfram í hendur nýrrar stjórnar.
 
-Við erum ánægð að tilkynna að **Umf Fram á Skagaströnd** er nú komið með nýja vefsíðu!
+Síðustu tvö ár hafa verið lærdómsrík, krefjandi en umfram allt skemmtileg. Það hefur verið afskaplega gaman og gefandi að taka þátt í uppbyggingu á ungmennafélaginu okkar allra. Það hefur skipt okkur miklu máli að þið hafið verið tilbúin að taka þátt í starfinu með okkur og mæta á æfingar.
 
-Hér muntu finna allar upplýsingar um félagið, viðburði, fréttir og mynd­söfn. Vefsíðan er í stöðugri þróun og við munum bæta við efni reglulega.
+Við þökkum sérstaklega **Péturínu**, **Ástrós Villu** og **Helenu Möru** fyrir ómetanlegt starf og allt sem þær lögðu af mörkum í þjónustu félagsins.
 
-## Hvað er hægt að finna hér?
+Kærar þakkir til allra iðkenda, þjálfara, foreldra og velunnara — án ykkar væri ekkert ungmennafélag.
 
-- **Fréttir** – Nýjustu fréttir og tilkynningar frá félaginu
-- **Um okkur** – Upplýsingar um sögu og starfsemi Umf Fram
-- **Stjórn** – Kynning á stjórn félagsins
-- **Fundargerðir** – Fundargerðir frá fundum félagsins
-- **Myndir** – Myndasafn frá viðburðum og starfsemi félagsins
-
-## Hafðu samband
-
-Ef þú hefur einhverjar spurningar eða ábendingar um vefsíðuna, hafðu endilega samband við okkur í gegnum [Facebook síðu okkar](https://www.facebook.com/profile.php?id=61550946432238).
-
-Við hlökkum til að hitta ykkur á viðburðum félagsins!
+Fráfarandi stjórn óskar nýkjörinni stjórn velfarnaðar í öllum þeirra störfum.
