@@ -1,6 +1,6 @@
 baseURL = 'https://umf-fram.is/'
 languageCode = 'is-is'
-title = 'Umf Fram á Skagaströnd'
+title = 'Umf. Fram á Skagaströnd'
 theme = 'ananke'
 
 [params]

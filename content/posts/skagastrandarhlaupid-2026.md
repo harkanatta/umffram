@@ -8,7 +8,7 @@ description = "Skagastrandarhlaupið fer fram sunnudaginn 19. júlí 2026. Boði
 
 **Sunnudagurinn 19. júlí 2026, kl. 14:00**
 
-Skagastrandarhlaupið er samvinnuverkefni ATWORK og Umf Fram og allur ágóði rennur til ungmennafélagsins.
+Skagastrandarhlaupið er samvinnuverkefni ATWORK og umf. Fram og allur ágóði rennur til ungmennafélagsins.
 
 ## Vegalengdir
 
