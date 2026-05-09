@@ -1,7 +1,7 @@
 ---
 title: "Skíðaskálinn í Spákonufelli; upphaf og bygging"
 date: 2026-05-09
-draft: true
+draft: false
 slug: "skidaskalinn-upphaf"
 description: "Saga skíðaskálans í suðurhlíðum Spákonufells á Skagaströnd — frá fyrstu togbraut árið 1974, í gegnum sjálfboðaliðabygginguna 1984–85 og fram til vígslunnar 5. apríl 1985, og notkun hússins í gegnum árin."
 featured_image: "https://skagastrond.datadwell.com/p/myndasafn/i/13959_ingibergur-gudmundsson-324.jpg"
