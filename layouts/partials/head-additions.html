@@ -1,5 +1,5 @@
 {{ if .Params.featured_image }}
-<meta property="og:image" content="{{ .Params.featured_image }}">
+<meta property="og:image" content="{{ .Params.featured_image | absURL }}">
 {{ else }}
 <meta property="og:image" content="https://umf-fram.is/images/logo.png">
 {{ end }}
