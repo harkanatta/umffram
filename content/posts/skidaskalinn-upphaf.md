@@ -11,7 +11,7 @@ featured_image: "https://skagastrond.datadwell.com/p/myndasafn/i/13959_ingibergu
 
 *Ljósmynd: Ingibergur Guðmundsson, Ljósmyndasafn Skagastrandar.*
 
-Skíðaskáli ungmennafélagsins Fram á sér skemmtilega sögu. Skálinn var byggður á einu ári, gerður fokheldur um haustið 1983 og síðan innréttaður um veturinn og vorið 1983-1984. Skálinn var að langmestu leyti byggður í sjálfboðavinnu. Skíðaskálinn er ennþá notaður fyrir afmæli, fundi, útskriftaferðir úr leikskólanum Barnabóli og fleira. Hann er einnig í útleigu sem gistiaðstaða á sumrin og á veturna ef það er ekki ófært þangað uppeftir vegna snjóþyngsla.
+Skíðaskáli ungmennafélagsins Fram á sér skemmtilega sögu. Skálinn var byggður á einu ári, gerður fokheldur um haustið 1984 og síðan innréttaður um veturinn og vorið 1984-1985. Skálinn var að langmestu leyti byggður í sjálfboðavinnu. Skíðaskálinn er ennþá notaður fyrir afmæli, fundi, útskriftaferðir úr leikskólanum Barnabóli og fleira. Hann er einnig í útleigu sem gistiaðstaða á sumrin og á veturna ef það er ekki ófært þangað uppeftir vegna snjóþyngsla.
 Greinin byggir eingöngu á texta úr Ljósmyndasafni Skagastrandar.
 
 ## Forsagan
@@ -69,7 +69,7 @@ Húsið teiknaði Vilmar Þór Kristinsson tæknifræðingur eiginmaður Unnar G
 „Á myndinni er búið að reisa sperrur skálans og þá var að sjálfsögðu haldið reisugilli með kaffi, kleinum og rjómapönnukökum. Til hægri sér í gamla lyftuskúrinn og lyftumótorinn."
 
 <figure>
-  <img src="https://skagastrond.datadwell.com/p/myndasafn/i/13960_ingibergur-gudmundsson-325.jpg" alt="Vorið 1984  hófust áhugamenn handa við að byggja Skíðaskálann á Skagaströnd. Á myndinni er stund mikilli stríða eftir að búið er að einangra skálann með glerull. Skíðaáhugamennirnir á myndinni eru, frá vinstri: Pétur Eggertsson, Ólafur Bernódusson og Magnús B. Jónsson.">
+  <img src="https://skagastrond.datadwell.com/p/myndasafn/i/13960_ingibergur-gudmundsson-325.jpg" alt="Vorið 1984  hófust áhugamenn handa við að byggja Skíðaskálann á Skagaströnd. Á myndinni er stund milli stríða eftir að búið er að einangra skálann með glerull. Skíðaáhugamennirnir á myndinni eru, frá vinstri: Pétur Eggertsson, Ólafur Bernódusson og Magnús B. Jónsson.">
   <figcaption>Eftir einangrunina. Ljósmynd: Ingibergur Guðmundsson, Ljósmyndasafn Skagastrandar.</figcaption>
 </figure>
 
@@ -89,7 +89,6 @@ Veturinn 1984–85 vann fjöldi sjálfboðaliða um helgar að klæðningunni a�
   <figcaption>Magnús B. Jónsson lakkar veggpanel, eftir áramótin 1984/85. Ljósmynd: Ingibergur Guðmundsson, Ljósmyndasafn Skagastrandar.</figcaption>
 </figure>
 
-„Á myndinni er Magnús B. Jónsson að lakka veggpanelinn eftir áramótin 1984/85."
 
 ## Jólapósturinn og önnur tekjuöflun
 
@@ -138,7 +137,7 @@ Skálinn var vígður formlega 5. apríl 1985 og þá var húsfyllir í skálanu
   <figcaption>Skíðamennska og skálinn í blíðviðri. Ljósmyndasafn Skagastrandar.</figcaption>
 </figure>
 
-„Myndin er af skíðaskálanum í Spákonufelli. Þarna var skíðaparadís sem byggð var upp af samhentu áhugafólki með stuðningi sveitarfélags og fyrirtækja. Skíðamennska lagðist af þarna kringum árið 2000 m.a. vegna mjög hertra öryggiskrafna yfirvalda, sem gerðu gömlu skíðalyftuna nánast ónothæfa. Á myndinni er mikið um að vera í blíðviðri og margir á skíðum."
+„Myndin er af skíðaskálanum í Spákonufelli. Þarna var skíðaparadís sem byggð var upp af samhentu áhugafólki með stuðningi sveitarfélags og fyrirtækja. Skíðamennska lagðist af þarna kringum árið 2000 m.a. vegna mjög hertra öryggiskrafna yfirvalda, sem gerðu gömlu skíðalyftuna nánast ónothæfa. Á myndinni er mikið um að vera í blíðviðri og margir á skíðum." 
 
 <figure>
   <img src="https://skagastrond.datadwell.com/p/myndasafn/i/9445_arni-geir-ingvarsson-safn-579.jpg" alt="Skíðaskálinn á Skagaströnd við rætur Spákonufells. Hvíti skúrinn á myndinni var lyftuskúr en hann fauk í ofviðri og splundraðist.">
