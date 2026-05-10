@@ -4,7 +4,7 @@ date = 2024-09-09T23:09:32Z
 draft = false
 +++
 
-## Stjórn umf. Fram á Skagaströnd
+## Stjórn Umf Fram á Skagaströnd
 
 | Nafn | Hlutverk |
 |------|----------|

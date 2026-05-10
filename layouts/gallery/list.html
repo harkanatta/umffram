@@ -45,13 +45,23 @@
   {{ end }}
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-  GLightbox({
-    selector: '.glightbox',
-    touchNavigation: true,
-    loop: true,
-    zoomable: true
+  document.querySelectorAll('[data-gallery]').forEach(function(section) {
+    var gallery = section.getAttribute('data-gallery');
+    if (section.classList.contains('masonry-grid')) return;
+    GLightbox({ selector: '[data-gallery="' + gallery + '"]' });
+  });
+
+  // One lightbox per year group
+  document.querySelectorAll('.masonry-grid').forEach(function(grid) {
+    var year = grid.getAttribute('data-gallery');
+    GLightbox({
+      selector: '.masonry-grid[data-gallery="' + year + '"] .glightbox',
+      touchNavigation: true,
+      loop: true,
+      zoomable: true
+    });
   });
 </script>
 {{ end }}

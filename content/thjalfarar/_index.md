@@ -4,7 +4,7 @@ date = 2026-04-19T00:00:00Z
 draft = false
 +++
 
-## Þjálfarar umf. Fram á Skagaströnd
+## Þjálfarar Umf Fram á Skagaströnd
 
 | Nafn | Grein |
 |------|-------|
