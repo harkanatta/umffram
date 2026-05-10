@@ -62,6 +62,11 @@ url = "https://www.facebook.com/profile.php?id=61550946432238"
     url = "/stundaskra/"
     weight = 7
 
+  [[menu.main]]
+    name = "Skagastrandarhlaupið"
+    url = "/hlaupaaetlun/"
+    weight = 8
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
