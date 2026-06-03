@@ -251,6 +251,17 @@
   <!-- Price summary -->
   <div class="price-total-card" id="priceSummary"></div>
 
+  <!-- Payment info -->
+  <div class="card" style="border: 3px solid #002c98;">
+    <div class="card-title">Greiðsluupplýsingar</div>
+    <div style="font-size:14px; font-weight:600; line-height:2;">
+      <div><span style="opacity:0.55; font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:800;">Umf. Fram á Skagaströnd</span></div>
+      <div>kt. <strong>461191-1189</strong></div>
+      <div><strong>0160-26-000123</strong></div>
+    </div>
+    <div style="font-size:12px; opacity:0.55; margin-top:10px; font-weight:600;">Vinsamlegast greiddu eftir skráningu. Kennitala greiðanda er notuð til að staðfesta greiðslu.</div>
+  </div>
+
   <button class="submit-btn" id="submitBtn" onclick="handleSubmit()">Skrá börn</button>
   <div class="form-msg" id="formMsg"></div>
 
@@ -455,7 +466,9 @@ window.handleSubmit = async function() {
       skrad: serverTimestamp()
     });
     msg.className = "form-msg success";
-    msg.textContent = `Skráning móttekin! ${bornData.map(b => b.nafn).join(" og ")} ${bornData.length > 1 ? "eru" : "er"} skráð/skráður. Við höfum samband ef þörf krefur.`;
+    msg.innerHTML = `Skráning móttekin! ${bornData.map(b => b.nafn).join(" og ")} ${bornData.length > 1 ? "eru" : "er"} skráð.
+    <br><br>Vinsamlegast greiddu <strong>${total.toLocaleString("is-IS")} kr.</strong> inn á reikning Umf. Fram:<br>
+    <strong>0160-26-000123</strong> &nbsp;·&nbsp; kt. <strong>461191-1189</strong>`;
     btn.textContent = "Skráð!";
   } catch (e) {
     msg.className = "form-msg error";
