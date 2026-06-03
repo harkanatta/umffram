@@ -356,7 +356,7 @@ window.addChild = function() {
       <div class="card-title">Barn ${id}</div>
       <div style="display:flex;gap:8px;align-items:center;">
         ${isSibling ? '<span class="sibling-badge">Systkini — 10% afsláttur</span>' : ""}
-        ${id > 1 ? `<button class="remove-btn" onclick="removeChild(${id})">Fjarlægja</button>` : ""}
+        ${id > 1 ? `<button class="remove-btn" onclick="fjarlaegjaBarn(${id})">Fjarlægja</button>` : ""}
       </div>
     </div>
     <div class="form-row">
@@ -382,7 +382,7 @@ window.onKtInput = function(el) {
   updateSummary();
 };
 
-window.removeChild = function(id) {
+window.fjarlaegjaBarn = function(id) {
   const idx = children.findIndex(c => c.id === id);
   if (idx !== -1) children.splice(idx, 1);
   document.getElementById("child-card-" + id)?.remove();
