@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/images/logo.png">
+<title>Sumarnámskeið '26 — Umf. Fram</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: #f5e400;
+    color: #000;
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  .header {
+    background: #002c98;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .header-logo { width: 64px; height: auto; flex-shrink: 0; }
+  .header-text { display: flex; flex-direction: column; align-items: center; flex: 1; text-align: center; }
+  .header-eyebrow { font-size: 11px; letter-spacing: 4px; color: rgba(255,255,255,0.65); text-transform: uppercase; font-weight: 700; margin-bottom: 4px; }
+  .header h1 { font-size: clamp(22px, 5vw, 48px); font-weight: 900; letter-spacing: -1px; color: #fff; line-height: 1; margin-bottom: 4px; }
+  .header-sub { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.65); font-weight: 700; text-transform: uppercase; }
+
+  .container { max-width: 640px; margin: 0 auto; padding: 28px 16px 48px; }
+
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+
+  .card-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 800;
+    opacity: 0.5;
+    margin-bottom: 14px;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .card-header .card-title { margin-bottom: 0; }
+
+  .sibling-badge {
+    font-size: 11px;
+    font-weight: 800;
+    background: #f5e400;
+    padding: 3px 10px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+  }
+
+  .remove-btn {
+    background: none;
+    border: 2px solid #be0000;
+    color: #be0000;
+    border-radius: 50px;
+    padding: 3px 12px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.12s;
+  }
+  .remove-btn:hover { background: #be0000; color: #fff; }
+
+  .form-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .form-group { display: flex; flex-direction: column; gap: 5px; flex: 1; min-width: 180px; margin-bottom: 12px; }
+  .form-group:last-child { margin-bottom: 0; }
+
+  label { display: block; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; opacity: 0.6; margin-bottom: 5px; }
+
+  input[type="text"], input[type="tel"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 3px solid #000;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.12s;
+  }
+  input:focus { border-color: #002c98; }
+  input.invalid { border-color: #be0000; }
+
+  .courses { display: flex; flex-direction: column; gap: 5px; margin-top: 14px; }
+
+  .course-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 12px;
+    border-radius: 10px;
+    border: 2px solid #eee;
+    cursor: pointer;
+    transition: all 0.12s;
+    user-select: none;
+  }
+  .course-row:hover { border-color: #002c98; background: #f8f8ff; }
+  .course-row.checked { border-color: #002c98; background: #eef1ff; }
+
+  .course-check {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all 0.12s;
+  }
+  .course-row.checked .course-check { background: #002c98; border-color: #002c98; color: #fff; }
+
+  .course-info { flex: 1; }
+  .course-name { font-size: 13px; font-weight: 800; }
+  .course-date { font-size: 11px; opacity: 0.5; font-weight: 600; }
+
+  .add-child-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: 3px dashed #002c98;
+    background: transparent;
+    color: #002c98;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    transition: all 0.12s;
+    margin-bottom: 12px;
+  }
+  .add-child-btn:hover { background: #002c98; color: #fff; }
+
+  .price-total-card {
+    background: #002c98;
+    border-radius: 20px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0.75;
+    margin-bottom: 4px;
+  }
+  .price-row.total {
+    font-size: 18px;
+    font-weight: 900;
+    opacity: 1;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px solid rgba(255,255,255,0.3);
+    color: #f5e400;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 14px;
+    border: 3px solid #002c98;
+    background: #002c98;
+    color: #fff;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    transition: all 0.12s;
+    margin-bottom: 12px;
+  }
+  .submit-btn:hover:not(:disabled) { background: #be0000; border-color: #be0000; }
+  .submit-btn:disabled { background: #999; border-color: #999; cursor: default; }
+
+  .form-msg {
+    padding: 14px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    display: none;
+  }
+  .form-msg.success { background: #d4edda; color: #155724; display: block; }
+  .form-msg.error { background: #f8d7da; color: #721c24; display: block; }
+
+  .footer {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #000;
+    opacity: 0.5;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .footer a { color: #002c98; text-decoration: underline; opacity: 1; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="/"><img class="header-logo" src="/images/logo.png" alt="Umf. Fram á Skagaströnd"></a>
+  <div class="header-text">
+    <div class="header-eyebrow">Umf. Fram á Skagaströnd</div>
+    <h1>SUMARNÁMSKEIÐ</h1>
+    <div class="header-sub">Sumarið 2026 &nbsp;·&nbsp; 2.700 kr. á námskeið</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- Guardian info -->
+  <div class="card">
+    <div class="card-title">Umsjónaraðili og greiðandi</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="simi">Símanúmer umsjónaraðila</label>
+        <input type="tel" id="simi" placeholder="000-0000">
+      </div>
+      <div class="form-group">
+        <label for="kt-greidslu">Kennitala greiðanda</label>
+        <input type="text" id="kt-greidslu" placeholder="000000-0000" maxlength="11">
+      </div>
+    </div>
+  </div>
+
+  <!-- Children -->
+  <div id="childrenContainer"></div>
+
+  <button class="add-child-btn" onclick="addChild()">+ Bæta við barni</button>
+
+  <!-- Price summary -->
+  <div class="price-total-card" id="priceSummary"></div>
+
+  <button class="submit-btn" id="submitBtn" onclick="handleSubmit()">Skrá börn</button>
+  <div class="form-msg" id="formMsg"></div>
+
+  <div class="footer">
+    <a href="/">umf-fram.is</a>
+  </div>
+
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCo-G3s8R84yb_MsgA8xdDrUVegonX2ouM",
+  authDomain: "verkefnalisti-umhverfi.firebaseapp.com",
+  projectId: "verkefnalisti-umhverfi",
+  storageBucket: "verkefnalisti-umhverfi.firebasestorage.app",
+  messagingSenderId: "479888787576",
+  appId: "1:479888787576:web:3bba7432b794738b41c58d"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const PRICE = 2700;
+const SIBLING_DISCOUNT = 0.10;
+
+const courses = [
+  { id: "knattspyrna",    name: "Knattspyrnuskóli Norðulands vestra", date: "8.-9. júní, kl. 17-19" },
+  { id: "skolagardar",    name: "Skólagarðar — Judith",               date: "10.-11. júní"           },
+  { id: "listnamskeio",   name: "Listnámskeið — Kristbjörg Dúfa",     date: "15.-18. júní"           },
+  { id: "bjorgunarsveit", name: "Björgunarsveitin",                   date: "22.-26. júní"           },
+  { id: "kofasmio",       name: "Kofasmíði",                          date: "Júlí (nánar síðar)"     },
+  { id: "dorg",           name: "Dorg — Addi",                        date: "Júlí (nánar síðar)"     },
+  { id: "kayak",          name: "Kayak",                              date: "3.-6. ágúst"            },
+];
+
+let childCount = 0;
+const children = []; // { id, selected: Set }
+
+function formatKt(val) {
+  const d = val.replace(/\D/g, "").substring(0, 10);
+  return d.length > 6 ? d.substring(0, 6) + "-" + d.substring(6) : d;
+}
+
+function validateKt(kt) {
+  const d = kt.replace(/\D/g, "");
+  if (d.length !== 10) return false;
+  const day = parseInt(d.substring(0, 2));
+  const month = parseInt(d.substring(2, 4));
+  return day >= 1 && day <= 71 && month >= 1 && month <= 12;
+}
+
+function priceFor(childIndex, numCourses) {
+  const unitPrice = childIndex === 0 ? PRICE : Math.round(PRICE * (1 - SIBLING_DISCOUNT));
+  return unitPrice * numCourses;
+}
+
+function updateSummary() {
+  const summary = document.getElementById("priceSummary");
+  let html = "";
+  let total = 0;
+
+  children.forEach((child, i) => {
+    const nafn = document.getElementById("nafn-" + child.id)?.value.trim() || "Barn " + (i + 1);
+    const count = child.selected.size;
+    if (count === 0) return;
+    const unitPrice = i === 0 ? PRICE : Math.round(PRICE * (1 - SIBLING_DISCOUNT));
+    const subtotal = unitPrice * count;
+    total += subtotal;
+    const label = i === 0 ? "" : ` <span style="font-size:10px;opacity:0.7">(10% afsl.)</span>`;
+    html += `<div class="price-row"><span>${nafn} — ${count} námskeið${label}</span><span>${subtotal.toLocaleString("is-IS")} kr.</span></div>`;
+  });
+
+  html += `<div class="price-row total"><span>Samtals</span><span>${total.toLocaleString("is-IS")} kr.</span></div>`;
+  summary.innerHTML = html;
+}
+
+window.addChild = function() {
+  childCount++;
+  const id = childCount;
+  const isSibling = children.length > 0;
+  children.push({ id, selected: new Set() });
+
+  const container = document.getElementById("childrenContainer");
+  const card = document.createElement("div");
+  card.className = "card";
+  card.id = "child-card-" + id;
+
+  const courseRows = courses.map(c => `
+    <div class="course-row" id="row-${id}-${c.id}" onclick="toggleCourse(${id}, '${c.id}')">
+      <div class="course-check" id="chk-${id}-${c.id}"></div>
+      <div class="course-info">
+        <div class="course-name">${c.name}</div>
+        <div class="course-date">${c.date}</div>
+      </div>
+    </div>
+  `).join("");
+
+  card.innerHTML = `
+    <div class="card-header">
+      <div class="card-title">Barn ${id}</div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        ${isSibling ? '<span class="sibling-badge">Systkini — 10% afsláttur</span>' : ""}
+        ${id > 1 ? `<button class="remove-btn" onclick="removeChild(${id})">Fjarlægja</button>` : ""}
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="nafn-${id}">Nafn barns</label>
+        <input type="text" id="nafn-${id}" placeholder="Fullt nafn" oninput="updateSummary()">
+      </div>
+      <div class="form-group">
+        <label for="kt-${id}">Kennitala barns</label>
+        <input type="text" id="kt-${id}" placeholder="000000-0000" maxlength="11" oninput="onKtInput(this)">
+      </div>
+    </div>
+    <div class="courses">${courseRows}</div>
+  `;
+
+  container.appendChild(card);
+  updateSummary();
+};
+
+window.onKtInput = function(el) {
+  el.value = formatKt(el.value);
+  el.classList.toggle("invalid", el.value.length > 0 && !validateKt(el.value));
+  updateSummary();
+};
+
+window.removeChild = function(id) {
+  const idx = children.findIndex(c => c.id === id);
+  if (idx !== -1) children.splice(idx, 1);
+  document.getElementById("child-card-" + id)?.remove();
+  updateSummary();
+};
+
+window.toggleCourse = function(childId, courseId) {
+  const child = children.find(c => c.id === childId);
+  if (!child) return;
+  const row = document.getElementById("row-" + childId + "-" + courseId);
+  const chk = document.getElementById("chk-" + childId + "-" + courseId);
+  if (child.selected.has(courseId)) {
+    child.selected.delete(courseId);
+    row.classList.remove("checked");
+    chk.textContent = "";
+  } else {
+    child.selected.add(courseId);
+    row.classList.add("checked");
+    chk.textContent = "✓";
+  }
+  updateSummary();
+};
+
+document.getElementById("kt-greidslu").addEventListener("input", function() {
+  this.value = formatKt(this.value);
+  this.classList.toggle("invalid", this.value.length > 0 && !validateKt(this.value));
+});
+
+window.handleSubmit = async function() {
+  const simi = document.getElementById("simi").value.trim();
+  const ktGreidslu = document.getElementById("kt-greidslu").value.trim();
+  const msg = document.getElementById("formMsg");
+  const btn = document.getElementById("submitBtn");
+  msg.className = "form-msg";
+
+  if (!simi) { msg.className = "form-msg error"; msg.textContent = "Vinsamlegast skráðu símanúmer umsjónaraðila."; return; }
+  if (!validateKt(ktGreidslu)) { msg.className = "form-msg error"; msg.textContent = "Kennitala greiðanda er ekki gild."; return; }
+  if (children.length === 0) { msg.className = "form-msg error"; msg.textContent = "Vinsamlegast bættu við barni."; return; }
+
+  for (let i = 0; i < children.length; i++) {
+    const child = children[i];
+    const nafn = document.getElementById("nafn-" + child.id).value.trim();
+    const kt = document.getElementById("kt-" + child.id).value.trim();
+    if (!nafn) { msg.className = "form-msg error"; msg.textContent = `Vantar nafn á barni ${i + 1}.`; return; }
+    if (!validateKt(kt)) { msg.className = "form-msg error"; msg.textContent = `Kennitala barns ${i + 1} er ekki gild.`; return; }
+    if (child.selected.size === 0) { msg.className = "form-msg error"; msg.textContent = `Barn ${i + 1} (${nafn}) hefur ekki valið námskeið.`; return; }
+  }
+
+  btn.disabled = true;
+  btn.textContent = "Skrái...";
+
+  let total = 0;
+  const bornData = children.map((child, i) => {
+    const nafn = document.getElementById("nafn-" + child.id).value.trim();
+    const kt = document.getElementById("kt-" + child.id).value.trim().replace(/\D/g, "");
+    const isSibling = i > 0;
+    const unitPrice = isSibling ? Math.round(PRICE * (1 - SIBLING_DISCOUNT)) : PRICE;
+    const subtotal = unitPrice * child.selected.size;
+    total += subtotal;
+    const selectedCourses = courses.filter(c => child.selected.has(c.id)).map(c => ({ id: c.id, name: c.name }));
+    return { nafn, kennitala: kt, namskeio: selectedCourses, fjoldi: child.selected.size, verd: subtotal, systkini: isSibling };
+  });
+
+  try {
+    await addDoc(collection(db, "sumarnam2026"), {
+      simi,
+      kennitaluGreidslu: ktGreidslu.replace(/\D/g, ""),
+      born: bornData,
+      heildarverd: total,
+      skrad: serverTimestamp()
+    });
+    msg.className = "form-msg success";
+    msg.textContent = `Skráning móttekin! ${bornData.map(b => b.nafn).join(" og ")} ${bornData.length > 1 ? "eru" : "er"} skráð/skráður. Við höfum samband ef þörf krefur.`;
+    btn.textContent = "Skráð!";
+  } catch (e) {
+    msg.className = "form-msg error";
+    msg.textContent = "Villa kom upp. Reyndu aftur eða hafðu samband við okkur.";
+    btn.disabled = false;
+    btn.textContent = "Skrá börn";
+  }
+};
+
+// Start with one child
+addChild();
+</script>
+
+</body>
+</html>

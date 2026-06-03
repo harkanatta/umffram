@@ -67,6 +67,11 @@ url = "https://www.facebook.com/profile.php?id=61550946432238"
     url = "/hlaupaaetlun/"
     weight = 8
 
+  [[menu.main]]
+    name = "Sumarnámskeið"
+    url = "/sumarnam/"
+    weight = 9
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
