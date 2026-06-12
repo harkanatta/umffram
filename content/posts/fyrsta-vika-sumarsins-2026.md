@@ -8,7 +8,7 @@ description = "Fyrsta vikan af sumarnámskeiðum fór vel af stað með knattspy
 
 Fyrsta vikan af sumarnámskeiðum fór vel af stað. Tóti mætti með Knattspyrnuakademíu Norðurlands og hélt stuttar tveggja æfinga búðir á sparkvellinum. Hann flutti seinni æfinguna inn í íþróttahús í skjól fyrir rigningunni á þriðjudaginn.
 
-Dagana eftir héldum við skólagarða þar sem gróðurkassar voru gerðir úr úreldum fiskikörum. Skólagarðarnir eru nýtt og spennandi verkefni frá henni Judith. Þeir voru vel sóttir og viljum við þakka þeim Öllu í Ásgarði, Daníel, Ílónu, Sibba og Slavko fyrir efni og aðstoð.
+Dagana eftir héldum við skólagarða þar sem gróðurkassar voru gerðir úr úreldum fiskikörum. Skólagarðarnir eru nýtt og spennandi verkefni frá henni Judith. Þeir voru vel sóttir og viljum við þakka þeim Daníelu, Ílónu, Karen í Víkum, Sibba, Slavko og Öllu í Ásgarði fyrir efni og aðstoð.
 
 Við megum koma og kíkja á hvernig gróðurinn vex og sjá hvort hann dafnar vel. Það þarf að vöka við og við en athugum að það er verra ef plöntur eru vökvaðar of mikið frekar en of lítið. Hún Judith verður til taks og fylgist með í sumar og við látum alla vita áður en uppskera hefst.
 
