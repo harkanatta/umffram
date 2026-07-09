@@ -98,7 +98,7 @@ Ungmennafélagið ásamt björgunarsveitinni Strönd og kvenfélaginu Einingu er
   <div class="fg"><label for="g-nafn">Nafn</label><input type="text" id="g-nafn" placeholder="Fullt nafn"></div>
   <div class="fg"><label for="g-simi">Símanúmer</label><input type="tel" id="g-simi" placeholder="000-0000"></div>
   <div class="fg"><label for="g-netfang">Netfang</label><input type="email" id="g-netfang" placeholder="netfang@dæmi.is"></div>
-  <button id="gaesla-btn" onclick="gaeslaSubmit()">Skrá mig</button>
+  <button id="gaesla-btn" onclick="gaeslaSubmit()">Skrá mig sem sjálfboðaliða</button>
   <div id="gaesla-msg"></div>
 </div>
 
