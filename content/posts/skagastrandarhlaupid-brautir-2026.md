@@ -78,7 +78,71 @@ Vegalengdirnar eru nokkuð almennar, 5 km hlaupið geta margir hlaupið, 10 km h
 
 ## Við þurfum á aðstoð að halda
 
-Ungmennafélagið ásamt björgunarsveitinni Strönd og kvenfélaginu Einingu eru að leita að fólki til að gæta brautanna meðan keppnin fer fram. Þetta felst í því að standa við ákveðin beygjur eða vegamót og sjá til þess að hlauparar fari réttar leiðir og að leiðbeina umferð. Ef þú getur gefið nokkra klukkutíma sunnudaginn 19. júlí, hafðu samband við okkur.
+Ungmennafélagið ásamt björgunarsveitinni Strönd og kvenfélaginu Einingu eru að leita að fólki til að gæta brautanna meðan keppnin fer fram. Þetta felst í því að standa við ákveðin beygjur eða vegamót og sjá til þess að hlauparar fari réttar leiðir og að leiðbeina umferð. Ef þú getur gefið nokkra klukkutíma sunnudaginn 19. júlí, skráðu þig hér:
+
+<style>
+#gaesla-form { background:#f5f5f5; border-radius:12px; padding:20px; margin:1.5rem 0; max-width:480px; }
+#gaesla-form .fg { display:flex; flex-direction:column; margin-bottom:12px; }
+#gaesla-form label { font-size:11px; font-weight:800; letter-spacing:2px; text-transform:uppercase; opacity:0.6; margin-bottom:5px; }
+#gaesla-form input { padding:10px 12px; border:2px solid #ccc; border-radius:8px; font-size:15px; font-family:inherit; outline:none; transition:border-color .12s; }
+#gaesla-form input:focus { border-color:#002c98; }
+#gaesla-btn { width:100%; padding:12px; background:#002c98; color:#fff; border:none; border-radius:8px; font-size:15px; font-weight:800; font-family:inherit; cursor:pointer; transition:background .12s; }
+#gaesla-btn:hover:not(:disabled) { background:#be0000; }
+#gaesla-btn:disabled { background:#999; cursor:default; }
+#gaesla-msg { margin-top:10px; padding:10px 14px; border-radius:8px; font-size:14px; font-weight:700; display:none; }
+#gaesla-msg.success { background:#d4edda; color:#155724; display:block; }
+#gaesla-msg.error   { background:#f8d7da; color:#721c24; display:block; }
+</style>
+
+<div id="gaesla-form">
+  <div class="fg"><label for="g-nafn">Nafn</label><input type="text" id="g-nafn" placeholder="Fullt nafn"></div>
+  <div class="fg"><label for="g-simi">Símanúmer</label><input type="tel" id="g-simi" placeholder="000-0000"></div>
+  <div class="fg"><label for="g-netfang">Netfang</label><input type="email" id="g-netfang" placeholder="netfang@dæmi.is"></div>
+  <button id="gaesla-btn" onclick="gaeslaSubmit()">Skrá mig</button>
+  <div id="gaesla-msg"></div>
+</div>
+
+<script type="module">
+import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
+
+const cfg = {
+  apiKey: "AIzaSyCo-G3s8R84yb_MsgA8xdDrUVegonX2ouM",
+  authDomain: "verkefnalisti-umhverfi.firebaseapp.com",
+  projectId: "verkefnalisti-umhverfi",
+  storageBucket: "verkefnalisti-umhverfi.firebasestorage.app",
+  messagingSenderId: "479888787576",
+  appId: "1:479888787576:web:3bba7432b794738b41c58d"
+};
+const app = getApps().length ? getApp() : initializeApp(cfg);
+const db = getFirestore(app);
+
+window.gaeslaSubmit = async function() {
+  const nafn    = document.getElementById('g-nafn').value.trim();
+  const simi    = document.getElementById('g-simi').value.trim();
+  const netfang = document.getElementById('g-netfang').value.trim();
+  const msg     = document.getElementById('gaesla-msg');
+  const btn     = document.getElementById('gaesla-btn');
+  msg.className = 'gaesla-msg';
+
+  if (!nafn)    { msg.className='gaesla-msg error'; msg.textContent='Vinsamlegast skráðu nafn.'; return; }
+  if (!simi)    { msg.className='gaesla-msg error'; msg.textContent='Vinsamlegast skráðu símanúmer.'; return; }
+  if (!netfang) { msg.className='gaesla-msg error'; msg.textContent='Vinsamlegast skráðu netfang.'; return; }
+
+  btn.disabled = true; btn.textContent = 'Skrái...';
+  try {
+    await addDoc(collection(db, 'brautargaesla2026'), { nafn, simi, netfang, skrad: serverTimestamp() });
+    msg.className = 'gaesla-msg success';
+    msg.textContent = 'Takk, ' + nafn + '! Við munum hafa samband.';
+    btn.textContent = 'Skráð!';
+  } catch(e) {
+    console.error('Firestore error:', e);
+    msg.className = 'gaesla-msg error';
+    msg.textContent = 'Villa kom upp: ' + e.message;
+    btn.disabled = false; btn.textContent = 'Skrá mig';
+  }
+};
+</script>
 
 ## Skráning
 
