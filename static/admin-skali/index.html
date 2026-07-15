@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skíðaskálinn – Bókunarstjórnun</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; background: #f0f0f0; color: #000; min-height: 100vh; }
+.header { background: #002c98; color: #fff; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+.header h1 { font-size: 18px; font-weight: 900; }
+.header span { font-size: 13px; opacity: 0.7; }
+#logout-btn { background: rgba(255,255,255,0.15); border: none; color: #fff; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-family: inherit; font-size: 13px; font-weight: 700; }
+#logout-btn:hover { background: rgba(255,255,255,0.25); }
+.container { max-width: 640px; margin: 0 auto; padding: 24px 16px; }
+
+/* Login */
+#login-view { display: flex; align-items: center; justify-content: center; min-height: 80vh; }
+.login-card { background: #fff; border-radius: 16px; padding: 32px; width: 100%; max-width: 360px; }
+.login-card h2 { font-size: 20px; font-weight: 900; margin-bottom: 20px; }
+.fg { display: flex; flex-direction: column; margin-bottom: 14px; }
+.fg label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; opacity: 0.6; margin-bottom: 5px; }
+.fg input { padding: 10px 12px; border: 2px solid #ccc; border-radius: 8px; font-size: 15px; font-family: inherit; outline: none; }
+.fg input:focus { border-color: #002c98; }
+.btn-primary { width: 100%; padding: 12px; background: #002c98; color: #fff; border: none; border-radius: 8px; font-size: 15px; font-weight: 800; font-family: inherit; cursor: pointer; }
+.btn-primary:hover { background: #001a6e; }
+.error-msg { color: #be0000; font-size: 13px; font-weight: 700; margin-top: 10px; }
+
+/* Admin */
+#admin-view { display: none; }
+.card { background: #fff; border-radius: 14px; padding: 20px; margin-bottom: 16px; }
+.card h2 { font-size: 15px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; opacity: 0.5; margin-bottom: 16px; }
+.booking-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #eee; gap: 12px; }
+.booking-row:last-child { border-bottom: none; }
+.booking-info { flex: 1; }
+.booking-dates { font-size: 15px; font-weight: 700; }
+.booking-type { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+.booking-type.booked { color: #002c98; }
+.booking-type.uncertain { color: #888; }
+.del-btn { background: none; border: 2px solid #be0000; color: #be0000; border-radius: 6px; padding: 4px 12px; font-size: 12px; font-weight: 800; cursor: pointer; font-family: inherit; white-space: nowrap; }
+.del-btn:hover { background: #be0000; color: #fff; }
+.empty-msg { color: #999; font-size: 14px; padding: 8px 0; }
+.form-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.form-row .fg { flex: 1; min-width: 140px; }
+select { padding: 10px 12px; border: 2px solid #ccc; border-radius: 8px; font-size: 15px; font-family: inherit; outline: none; width: 100%; }
+select:focus { border-color: #002c98; }
+.add-msg { margin-top: 10px; font-size: 13px; font-weight: 700; }
+.add-msg.ok { color: #1b5e20; }
+.add-msg.err { color: #be0000; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Skíðaskálinn — Bókunarstjórnun</h1>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <span id="user-email"></span>
+    <button id="logout-btn" style="display:none" onclick="doLogout()">Útskrá</button>
+  </div>
+</div>
+
+<!-- Login -->
+<div id="login-view">
+  <div class="login-card">
+    <h2>Innskráning</h2>
+    <div class="fg"><label>Netfang</label><input type="email" id="l-email" placeholder="netfang@dæmi.is"></div>
+    <div class="fg"><label>Lykilorð</label><input type="password" id="l-pass" placeholder="••••••••"></div>
+    <button class="btn-primary" onclick="doLogin()">Skrá inn</button>
+    <div class="error-msg" id="login-err"></div>
+  </div>
+</div>
+
+<!-- Admin -->
+<div id="admin-view">
+  <div class="container">
+
+    <!-- Current bookings -->
+    <div class="card">
+      <h2>Bókanir</h2>
+      <div id="bookings-list"><div class="empty-msg">Hleð...</div></div>
+    </div>
+
+    <!-- Add booking -->
+    <div class="card">
+      <h2>Bæta við bókun</h2>
+      <div class="form-row">
+        <div class="fg"><label>Frá</label><input type="date" id="a-start"></div>
+        <div class="fg"><label>Til</label><input type="date" id="a-end"></div>
+        <div class="fg"><label>Tegund</label>
+          <select id="a-type">
+            <option value="booked">Bókað</option>
+            <option value="uncertain">Óvíst (veður)</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="addBooking()">Bæta við</button>
+      <div class="add-msg" id="add-msg"></div>
+    </div>
+
+  </div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-auth.js";
+import { getFirestore, collection, getDocs, addDoc, deleteDoc, doc, orderBy, query } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
+
+const app = initializeApp({
+  apiKey: "AIzaSyCo-G3s8R84yb_MsgA8xdDrUVegonX2ouM",
+  authDomain: "verkefnalisti-umhverfi.firebaseapp.com",
+  projectId: "verkefnalisti-umhverfi",
+  storageBucket: "verkefnalisti-umhverfi.firebasestorage.app",
+  messagingSenderId: "479888787576",
+  appId: "1:479888787576:web:3bba7432b794738b41c58d"
+});
+const auth = getAuth(app);
+const db   = getFirestore(app);
+
+async function loadBookings() {
+  const list = document.getElementById('bookings-list');
+  list.innerHTML = '<div class="empty-msg">Hleð...</div>';
+  const snap = await getDocs(query(collection(db, 'skidaskalinn_bookings'), orderBy('start')));
+  if (snap.empty) { list.innerHTML = '<div class="empty-msg">Engar bókanir skráðar.</div>'; return; }
+  list.innerHTML = '';
+  snap.forEach(d => {
+    const { start, end, type } = d.data();
+    const label = type === 'uncertain' ? 'Óvíst (veður)' : 'Bókað';
+    const row = document.createElement('div');
+    row.className = 'booking-row';
+    row.innerHTML = `
+      <div class="booking-info">
+        <div class="booking-dates">${start} → ${end}</div>
+        <div class="booking-type ${type}">${label}</div>
+      </div>
+      <button class="del-btn" data-id="${d.id}">Eyða</button>`;
+    row.querySelector('.del-btn').addEventListener('click', async () => {
+      if (!confirm('Eyða þessari bókun?')) return;
+      await deleteDoc(doc(db, 'skidaskalinn_bookings', d.id));
+      loadBookings();
+    });
+    list.appendChild(row);
+  });
+}
+
+window.addBooking = async function() {
+  const start = document.getElementById('a-start').value;
+  const end   = document.getElementById('a-end').value;
+  const type  = document.getElementById('a-type').value;
+  const msg   = document.getElementById('add-msg');
+  if (!start || !end) { msg.className='add-msg err'; msg.textContent='Veldu upphafs- og lokadagsetningu.'; return; }
+  if (start > end)    { msg.className='add-msg err'; msg.textContent='Lokadagsetning verður að vera eftir upphafsdagsetningu.'; return; }
+  try {
+    await addDoc(collection(db, 'skidaskalinn_bookings'), { start, end, type });
+    msg.className='add-msg ok'; msg.textContent='Bókun bætt við!';
+    document.getElementById('a-start').value = '';
+    document.getElementById('a-end').value   = '';
+    loadBookings();
+  } catch(e) { msg.className='add-msg err'; msg.textContent='Villa: ' + e.message; }
+};
+
+window.doLogin = async function() {
+  const email = document.getElementById('l-email').value.trim();
+  const pass  = document.getElementById('l-pass').value;
+  const err   = document.getElementById('login-err');
+  try { await signInWithEmailAndPassword(auth, email, pass); }
+  catch(e) { err.textContent = 'Rangt netfang eða lykilorð.'; }
+};
+
+window.doLogout = function() { signOut(auth); };
+
+onAuthStateChanged(auth, user => {
+  if (user) {
+    document.getElementById('login-view').style.display  = 'none';
+    document.getElementById('admin-view').style.display  = 'block';
+    document.getElementById('logout-btn').style.display  = 'inline-block';
+    document.getElementById('user-email').textContent    = user.email;
+    loadBookings();
+  } else {
+    document.getElementById('login-view').style.display  = 'flex';
+    document.getElementById('admin-view').style.display  = 'none';
+    document.getElementById('logout-btn').style.display  = 'none';
+    document.getElementById('user-email').textContent    = '';
+  }
+});
+</script>
+</body>
+</html>
