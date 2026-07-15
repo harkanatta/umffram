@@ -95,12 +95,14 @@ Skíðaskálinn á Skagaströnd er í suðurhlíðum Spákonufells og er frábæ
 .cal-day.empty { background:transparent; }
 .cal-day.free { background:#e8f5e9; color:#1b5e20; }
 .cal-day.booked { background:#002c98; color:#fff; }
+.cal-day.uncertain { background:repeating-linear-gradient(45deg,#f5f5f5,#f5f5f5 4px,#e0e0e0 4px,#e0e0e0 8px); color:#666; }
 .cal-day.today { outline:2px solid #f5e400; outline-offset:-2px; }
-.cal-legend { display:flex; gap:16px; margin-top:10px; font-size:13px; font-weight:700; }
+.cal-legend { display:flex; gap:16px; margin-top:10px; font-size:13px; font-weight:700; flex-wrap:wrap; }
 .cal-legend span { display:flex; align-items:center; gap:6px; }
 .cal-legend span::before { content:''; display:inline-block; width:14px; height:14px; border-radius:4px; }
 .cal-legend .leg-free::before { background:#e8f5e9; border:2px solid #1b5e20; }
 .cal-legend .leg-booked::before { background:#002c98; }
+.cal-legend .leg-uncertain::before { background:repeating-linear-gradient(45deg,#f5f5f5,#f5f5f5 4px,#e0e0e0 4px,#e0e0e0 8px); border:1px solid #ccc; }
 .cal-loading { color:#999; font-size:14px; padding:1rem 0; }
 </style>
 
@@ -116,6 +118,7 @@ Skíðaskálinn á Skagaströnd er í suðurhlíðum Spákonufells og er frábæ
   <div class="cal-legend">
     <span class="leg-free">Laust</span>
     <span class="leg-booked">Bókað</span>
+    <span class="leg-uncertain">Óvíst (veður)</span>
   </div>
 </div>
 
@@ -138,6 +141,7 @@ const IS_MONTHS = ['Janúar','Febrúar','Mars','Apríl','Maí','Júní','Júlí'
 const IS_DAYS   = ['Mán','Þri','Mið','Fim','Fös','Lau','Sun'];
 
 let bookedDates = new Set();
+let uncertainDates = new Set();
 let currentYear, currentMonth;
 
 function toKey(d) {
@@ -157,7 +161,7 @@ function renderCal() {
   for (let i = 0; i < startDow; i++) html += `<div class="cal-day empty"></div>`;
   for (let d = 1; d <= daysInMonth; d++) {
     const key = currentYear + '-' + String(currentMonth+1).padStart(2,'0') + '-' + String(d).padStart(2,'0');
-    const cls = bookedDates.has(key) ? 'booked' : 'free';
+    const cls = bookedDates.has(key) ? 'booked' : uncertainDates.has(key) ? 'uncertain' : 'free';
     const todayCls = key === today ? ' today' : '';
     html += `<div class="cal-day ${cls}${todayCls}">${d}</div>`;
   }
@@ -174,10 +178,11 @@ async function init() {
   try {
     const snap = await getDocs(collection(db, 'skidaskalinn_bookings'));
     snap.forEach(doc => {
-      const { start, end } = doc.data();
+      const { start, end, type } = doc.data();
       const s = new Date(start), e = new Date(end);
+      const map = type === 'uncertain' ? uncertainDates : bookedDates;
       for (let d = new Date(s); d <= e; d.setDate(d.getDate()+1)) {
-        bookedDates.add(toKey(new Date(d)));
+        map.add(toKey(new Date(d)));
       }
     });
   } catch(err) { console.error('Calendar error:', err); }
