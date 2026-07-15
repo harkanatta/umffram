@@ -39,7 +39,7 @@
   var IS_MONTHS = ['Janúar','Febrúar','Mars','Apríl','Maí','Júní','Júlí','Ágúst','September','Október','Nóvember','Desember'];
   var IS_DAYS   = ['Mán','Þri','Mið','Fim','Fös','Lau','Sun'];
 
-  var BOOKINGS = {{ .Site.Data.skidaskalinn_bookings | jsonify }};
+  var BOOKINGS = JSON.parse({{ .Site.Data.skidaskalinn_bookings | jsonify }});
 
   var bookedDates    = new Set();
   var uncertainDates = new Set();
