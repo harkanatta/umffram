@@ -43,6 +43,12 @@ url = "https://www.facebook.com/profile.php?id=61550946432238"
     parent = "Um okkur"
 
   [[menu.main]]
+    name = "Skíðaskálinn"
+    url = "/skidaskalinn/"
+    weight = 3
+    parent = "Um okkur"
+
+  [[menu.main]]
     name = "Fundargerðir"
     url = "/documents/"
     weight = 4
