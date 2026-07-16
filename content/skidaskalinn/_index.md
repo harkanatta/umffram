@@ -64,6 +64,7 @@ Skíðaskálinn á Skagaströnd er í suðurhlíðum Spákonufells og er frábæ
   <div class="skali-stat"><div class="num">8</div><div class="lbl">Rúm</div></div>
   <div class="skali-stat"><div class="num">~15</div><div class="lbl">Dýnupláss</div></div>
   <div class="skali-stat"><div class="num">23</div><div class="lbl">Gestir samtals</div></div>
+  <div class="skali-stat"><div class="num" style="font-size:1.7rem;">25 þús.</div><div class="lbl">kr/nóttin</div></div>
 </div>
 
 <table class="skali-table">
@@ -90,8 +91,6 @@ Skíðaskálinn á Skagaströnd er í suðurhlíðum Spákonufells og er frábæ
 ## Bókun
 
 <div class="skali-book">
-  <p>Verð</p>
-  <div style="font-size:22px;font-weight:900;color:#f5e400;margin-bottom:12px;">25.000 kr. nóttin</div>
   <p>Hafðu samband</p>
   <a href="mailto:ungmennaf.fram@gmail.com">ungmennaf.fram@gmail.com</a>
 </div>
