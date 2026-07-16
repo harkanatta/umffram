@@ -32,7 +32,10 @@ description = "Skíðaskálinn á Skagaströnd — gisting við Spákonufell fyr
 }
 </script>
 
-<img src="/images/skidaskali.jpg" alt="Skíðaskálinn á Skagaströnd" style="width:100%;border-radius:12px;margin-bottom:1.5rem;">
+<figure style="margin:0 0 1.5rem;">
+<img src="/images/skidaskali.jpg" alt="Skíðaskálinn á Skagaströnd" style="width:100%;border-radius:12px;">
+<figcaption style="font-size:12px;color:#999;margin-top:4px;">Mynd: <a href="https://skagastrondtravel.is/" style="color:#999;">skagastrondtravel.is</a></figcaption>
+</figure>
 
 Skíðaskálinn á Skagaströnd er í suðurhlíðum Spákonufells og er frábær kostur fyrir litla og meðalstóra hópa sem leita að gistingu á Skagaströnd og í nágrenni hennar. Skálinn er opinn allt árið um kring.
 
