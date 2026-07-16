@@ -80,7 +80,12 @@
     grid.innerHTML = html;
   }
 
-  window.calPrev = function() { currentMonth--; if (currentMonth < 0) { currentMonth=11; currentYear--; } renderCal(); };
+  var startYear = now.getFullYear(), startMonth = now.getMonth();
+  window.calPrev = function() {
+    if (currentYear <= startYear && currentMonth <= startMonth) return;
+    currentMonth--; if (currentMonth < 0) { currentMonth=11; currentYear--; }
+    renderCal();
+  };
   window.calNext = function() {
     if (currentYear >= 2027 && currentMonth >= 11) return;
     currentMonth++; if (currentMonth > 11) { currentMonth=0; currentYear++; }
