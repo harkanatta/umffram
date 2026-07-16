@@ -90,6 +90,8 @@ Skíðaskálinn á Skagaströnd er í suðurhlíðum Spákonufells og er frábæ
 ## Bókun
 
 <div class="skali-book">
+  <p>Verð</p>
+  <div style="font-size:22px;font-weight:900;color:#f5e400;margin-bottom:12px;">25.000 kr. nóttin</div>
   <p>Hafðu samband</p>
   <a href="mailto:ungmennaf.fram@gmail.com">ungmennaf.fram@gmail.com</a>
 </div>
@@ -106,6 +108,6 @@ The Ski Cabin (*Skíðaskálinn*) is located on the slopes of Mt. Spákonufell, 
 
 Skagaströnd is within easy reach of the Vatnsnes peninsula (seal watching), Kolugljúfur canyon, and the Skagafjörður fjord — a great base for hiking, bird watching, fishing, and exploring North Iceland.
 
-**Bookings:** [ungmennaf.fram@gmail.com](mailto:ungmennaf.fram@gmail.com)
+**Price:** 25,000 ISK per night · **Bookings:** [ungmennaf.fram@gmail.com](mailto:ungmennaf.fram@gmail.com)
 
 </div>
