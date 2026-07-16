@@ -44,8 +44,10 @@
   var bookedDates    = new Set();
   var uncertainDates = new Set();
 
+  var today = new Date(); today.setHours(0,0,0,0);
   BOOKINGS.forEach(function(b) {
     var s = new Date(b.start), e = new Date(b.end);
+    if (e < today) return;
     var map = b.type === 'uncertain' ? uncertainDates : bookedDates;
     for (var d = new Date(s); d <= e; d.setDate(d.getDate()+1)) {
       map.add(d.toISOString().slice(0,10));
