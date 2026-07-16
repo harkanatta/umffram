@@ -85,6 +85,8 @@ Skíðaskálinn á Skagaströnd er í suðurhlíðum Spákonufells og er frábæ
 
 {{< skidaskalinn-cal >}}
 
+<p style="font-size:14px;color:#555;margin-top:8px;">Vegna þess að ekki er snjómokstur upp í skálann er ekki hægt að bóka vetrarnætur (nóv.–des.) með löngum fyrirvara — aðeins ef það er fært.</p>
+
 ## Bókun
 
 <div class="skali-book">
@@ -98,7 +100,7 @@ Skíðaskálinn á Skagaströnd er í suðurhlíðum Spákonufells og er frábæ
 
 ## Ski Cabin Skagaströnd — Accommodation in Iceland
 
-The Ski Cabin (*Skíðaskálinn*) is located on the slopes of Mt. Spákonufell, just outside the village of Skagaströnd in North Iceland. It sleeps up to 23 guests (8 beds + sleeping bag space for approx. 15) and is open year-round.
+The Ski Cabin (*Skíðaskálinn*) is located on the slopes of Mt. Spákonufell, just outside the village of Skagaströnd in North Iceland. It sleeps up to 23 guests (8 beds + sleeping bag space for approx. 15) and is open year-round. Note: the road to the cabin is not plowed in winter, so November–December bookings cannot be made far in advance — availability depends on road conditions.
 
 **Facilities:** Full kitchen · 2 bathrooms · Natural spring water · Parking on site
 
