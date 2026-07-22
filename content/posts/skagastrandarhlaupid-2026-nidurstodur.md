@@ -2,7 +2,7 @@
 title = "AtWork Skagastrandarhlaupið 2026 — Frábær hlaupadagur"
 date = 2026-07-22T00:00:00Z
 draft = false
-featured_image = "/images/hlauparar.jpg"
+featured_image = "/images/gallery/2026/hlauparar.jpg"
 description = "AtWork Skagastrandarhlaupið var haldið í fyrsta sinn og gekk framar vonum. Um 70 keppendur hlupu í götuhlaupunum og utanvegahlaupinu."
 +++
 
