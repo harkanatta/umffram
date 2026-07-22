@@ -1,5 +1,5 @@
 +++
-title = "Héraðsmót USAH 2026 — Frábær árangur Framsmeyja"
+title = "Héraðsmót USAH 2026"
 date = 2026-07-22T12:00:00Z
 draft = false
 featured_image = "/images/gallery/2026/k-heida-larey.jpg"
