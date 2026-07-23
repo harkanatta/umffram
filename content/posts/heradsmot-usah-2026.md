@@ -22,7 +22,7 @@ Lárey Mara keppti einnig í flokki 14–15 ára og sigraði í kúluvarpi með 
 
 <figure style="margin:1rem 0;">
 <img src="/images/gallery/2026/k-heida-larey.jpg" alt="Katrín Heiða og Lárey Mara" style="width:100%;border-radius:10px;">
-<figcaption style="font-size:13px;color:#777;margin-top:4px;">Katrín Heiða og Lárey á verðlaunapalli og Sigrún Erla Snorradóttir</figcaption>
+<figcaption style="font-size:13px;color:#777;margin-top:4px;">Katrín Heiða og Lárey Mara á verðlaunapalli ásamt Sigrúnu Erlu Snorradóttur sem keppir með Hvöt</figcaption>
 </figure>
 
 ## Katrín Sara
