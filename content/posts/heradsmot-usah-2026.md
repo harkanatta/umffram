@@ -10,7 +10,7 @@ description = "Á dögunum var héraðsmót USAH í frjálsum íþróttum haldi�
 
 <!--more-->
 
-Markverðast hjá iðkendum okkar í umf. Fram var árangur Katrínar Heiðu, Katrínar Söru og Lárey Möru.
+Markverðast hjá iðkendum okkar í umf. Fram var árangur Katrínar Heiðu Finnbogadóttur, Katrínar Söru Reynisdóttur og Láreyjar Möru Velemir.
 
 ## Katrín Heiða
 
