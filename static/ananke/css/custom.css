@@ -165,6 +165,10 @@ a[href="/skidaskalinn/"]:hover {
 @media screen and (max-width: 40em) {
   .masonry-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
 
+  nav ul.list a[href="/skidaskalinn/"] {
+    padding: 0.25rem 0.6rem !important;
+  }
+
   .site-navigation .list {
     flex-direction: column !important;
     align-items: center !important;
