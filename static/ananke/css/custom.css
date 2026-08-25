@@ -147,29 +147,12 @@ header .f-subheadline-l {
   opacity: 0.88;
 }
 
-/* Skíðaskálinn nav highlight */
-a[href="/skidaskalinn/"] {
-  background: #002c98 !important;
-  color: #f5e400 !important;
-  border-radius: 6px !important;
-  font-weight: 700 !important;
-  padding: 0.4rem 1rem !important;
-}
-
-a[href="/skidaskalinn/"]:hover {
-  background: #001f70 !important;
-  opacity: 1 !important;
-}
 
 /* Mobile */
 @media screen and (max-width: 40em) {
   .masonry-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
 
-  nav ul.list a[href="/skidaskalinn/"] {
-    padding: 0.25rem 0.6rem !important;
-  }
-
-  .site-navigation .list {
+.site-navigation .list {
     flex-direction: column !important;
     align-items: center !important;
   }
