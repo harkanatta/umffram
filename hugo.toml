@@ -45,21 +45,27 @@ url = "https://www.facebook.com/profile.php?id=61550946432238"
   [[menu.main]]
     name = "Fundargerðir"
     url = "/documents/"
-    weight = 4
+    weight = 3
+    parent = "Um okkur"
 
   [[menu.main]]
     name = "Myndir"
     url = "/gallery/"
-    weight = 5
+    weight = 4
 
   [[menu.main]]
     name = "Fréttir"
     url = "/posts/"
-    weight = 6
+    weight = 5
 
   [[menu.main]]
     name = "Stundaskrá"
     url = "/stundaskra/"
+    weight = 6
+
+  [[menu.main]]
+    name = "Haustskráning"
+    url = "/haustskraning/"
     weight = 7
 
   [[menu.main]]

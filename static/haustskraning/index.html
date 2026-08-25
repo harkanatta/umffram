@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/images/android-chrome-512x512.png">
+<title>Haustskráning 2026 — Umf. Fram</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: #f5e400;
+    color: #000;
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  .header {
+    background: #002c98;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .header-logo { width: 64px; height: auto; flex-shrink: 0; }
+  .header-text { display: flex; flex-direction: column; align-items: center; flex: 1; text-align: center; }
+  .header-eyebrow { font-size: 11px; letter-spacing: 4px; color: rgba(255,255,255,0.65); text-transform: uppercase; font-weight: 700; margin-bottom: 4px; }
+  .header h1 { font-size: clamp(20px, 5vw, 44px); font-weight: 900; letter-spacing: -1px; color: #fff; line-height: 1; margin-bottom: 4px; }
+  .header-sub { font-size: 12px; letter-spacing: 2px; color: rgba(255,255,255,0.65); font-weight: 700; text-transform: uppercase; }
+
+  .container { max-width: 600px; margin: 0 auto; padding: 28px 16px 48px; }
+
+  .card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 800;
+    opacity: 0.5;
+    margin-bottom: 14px;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .card-header .card-title { margin-bottom: 0; }
+
+  .info-card {
+    background: #002c98;
+    color: #fff;
+    border-radius: 20px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+  }
+  .info-card .label { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; font-weight: 800; opacity: 0.65; margin-bottom: 6px; }
+  .info-card .price { font-size: 36px; font-weight: 900; color: #f5e400; line-height: 1; }
+  .info-card .price-desc { font-size: 13px; opacity: 0.75; margin-top: 6px; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+  .form-group { display: flex; flex-direction: column; gap: 5px; }
+  .form-group label { font-size: 12px; font-weight: 700; opacity: 0.6; letter-spacing: 0.5px; }
+  .form-group input {
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .form-group input:focus { border-color: #002c98; }
+  .form-group input.invalid { border-color: #be0000; }
+
+  .remove-btn {
+    background: none;
+    border: 2px solid #be0000;
+    color: #be0000;
+    border-radius: 50px;
+    padding: 3px 12px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.12s;
+  }
+  .remove-btn:hover { background: #be0000; color: #fff; }
+
+  .add-btn {
+    width: 100%;
+    padding: 14px;
+    border: 3px dashed #002c98;
+    background: transparent;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #002c98;
+    cursor: pointer;
+    font-family: inherit;
+    margin-bottom: 12px;
+    transition: background 0.15s;
+  }
+  .add-btn:hover { background: rgba(0,44,152,0.06); }
+
+  .price-total-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+  }
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .price-row:last-child { border-bottom: none; }
+  .price-row.total { font-size: 17px; font-weight: 900; padding-top: 10px; margin-top: 4px; }
+
+  .submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: #002c98;
+    color: #f5e400;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    font-family: inherit;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    transition: opacity 0.15s;
+  }
+  .submit-btn:hover { opacity: 0.88; }
+  .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .form-msg {
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    display: none;
+  }
+  .form-msg.error { display: block; background: #fde8e8; color: #be0000; }
+  .form-msg.success { display: block; background: #e6f4ea; color: #1a6b2f; }
+
+  .footer { text-align: center; padding: 20px 0 0; font-size: 13px; opacity: 0.5; }
+  .footer a { color: inherit; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="/images/logo.png" alt="Umf. Fram" class="header-logo">
+  <div class="header-text">
+    <div class="header-eyebrow">Umf. Fram á Skagaströnd</div>
+    <h1>Haustskráning 2026</h1>
+    <div class="header-sub">Haustönn — Íþróttaárs 26/27</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="info-card">
+    <div class="label">Þátttökugjald</div>
+    <div class="price">20.000 kr.</div>
+    <div class="price-desc">á barn — veitir rétt til þátttöku í öllum íþróttagreinum á haustönn</div>
+  </div>
+
+  <!-- Parent/guardian info -->
+  <div class="card">
+    <div class="card-title">Foreldri / forráðamaður</div>
+    <div class="form-row" style="margin-bottom:12px;">
+      <div class="form-group">
+        <label for="nafn-foreldri">Nafn</label>
+        <input type="text" id="nafn-foreldri" placeholder="Fullt nafn">
+      </div>
+      <div class="form-group">
+        <label for="simi">Símanúmer</label>
+        <input type="tel" id="simi" placeholder="000-0000">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="kt-greidslu">Kennitala greiðanda</label>
+      <input type="text" id="kt-greidslu" placeholder="000000-0000" maxlength="11">
+    </div>
+  </div>
+
+  <!-- Children -->
+  <div id="childrenContainer"></div>
+
+  <button class="add-btn" onclick="addChild()">+ Bæta við barni</button>
+
+  <!-- Price summary -->
+  <div class="price-total-card" id="priceSummary" style="display:none;"></div>
+
+  <!-- Payment info -->
+  <div class="card" style="border: 3px solid #002c98;">
+    <div class="card-title">Greiðsluupplýsingar</div>
+    <div style="font-size:14px; font-weight:600; line-height:2;">
+      <div><span style="opacity:0.55; font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:800;">Umf. Fram á Skagaströnd</span></div>
+      <div>kt. <strong>461191-1189</strong></div>
+      <div><strong>0160-26-000123</strong></div>
+    </div>
+    <div style="font-size:12px; opacity:0.55; margin-top:10px; font-weight:600;">Vinsamlegast greiddu eftir skráningu. Kennitala greiðanda er notuð til að staðfesta greiðslu.</div>
+  </div>
+
+  <button class="submit-btn" id="submitBtn" onclick="handleSubmit()">Skrá</button>
+  <div class="form-msg" id="formMsg"></div>
+
+  <div class="footer">
+    <a href="/">umf-fram.is</a>
+  </div>
+
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCo-G3s8R84yb_MsgA8xdDrUVegonX2ouM",
+  authDomain: "verkefnalisti-umhverfi.firebaseapp.com",
+  projectId: "verkefnalisti-umhverfi",
+  storageBucket: "verkefnalisti-umhverfi.firebasestorage.app",
+  messagingSenderId: "479888787576",
+  appId: "1:479888787576:web:3bba7432b794738b41c58d"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const PRICE = 20000;
+
+let childCount = 0;
+const children = [];
+
+function formatKt(val) {
+  const d = val.replace(/\D/g, "").substring(0, 10);
+  return d.length > 6 ? d.substring(0, 6) + "-" + d.substring(6) : d;
+}
+
+function validateKt(kt) {
+  const d = kt.replace(/\D/g, "");
+  if (d.length !== 10) return false;
+  const day = parseInt(d.substring(0, 2));
+  const month = parseInt(d.substring(2, 4));
+  return day >= 1 && day <= 71 && month >= 1 && month <= 12;
+}
+
+function updateSummary() {
+  const summary = document.getElementById("priceSummary");
+  if (children.length === 0) { summary.style.display = "none"; return; }
+
+  let html = "";
+  let total = 0;
+  children.forEach((child, i) => {
+    const nafn = document.getElementById("nafn-" + child.id)?.value.trim() || "Barn " + (i + 1);
+    total += PRICE;
+    html += `<div class="price-row"><span>${nafn}</span><span>${PRICE.toLocaleString("is-IS")} kr.</span></div>`;
+  });
+  html += `<div class="price-row total"><span>Samtals</span><span>${total.toLocaleString("is-IS")} kr.</span></div>`;
+  summary.innerHTML = html;
+  summary.style.display = "block";
+}
+
+window.addChild = function() {
+  childCount++;
+  const id = childCount;
+  children.push({ id });
+
+  const container = document.getElementById("childrenContainer");
+  const card = document.createElement("div");
+  card.className = "card";
+  card.id = "child-card-" + id;
+  card.innerHTML = `
+    <div class="card-header">
+      <div class="card-title">Barn ${id}</div>
+      ${id > 1 ? `<button class="remove-btn" onclick="fjarlaegjaBarn(${id})">Fjarlægja</button>` : ""}
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="nafn-${id}">Nafn barns</label>
+        <input type="text" id="nafn-${id}" placeholder="Fullt nafn" oninput="updateSummary()">
+      </div>
+      <div class="form-group">
+        <label for="kt-${id}">Kennitala barns</label>
+        <input type="text" id="kt-${id}" placeholder="000000-0000" maxlength="11" oninput="onKtInput(this)">
+      </div>
+    </div>
+  `;
+  container.appendChild(card);
+  updateSummary();
+};
+
+window.onKtInput = function(el) {
+  el.value = formatKt(el.value);
+  el.classList.toggle("invalid", el.value.length > 0 && !validateKt(el.value));
+};
+
+window.fjarlaegjaBarn = function(id) {
+  const idx = children.findIndex(c => c.id === id);
+  if (idx !== -1) children.splice(idx, 1);
+  document.getElementById("child-card-" + id)?.remove();
+  updateSummary();
+};
+
+document.getElementById("kt-greidslu").addEventListener("input", function() {
+  this.value = formatKt(this.value);
+  this.classList.toggle("invalid", this.value.length > 0 && !validateKt(this.value));
+});
+
+window.handleSubmit = async function() {
+  const nafnForeldri = document.getElementById("nafn-foreldri").value.trim();
+  const simi = document.getElementById("simi").value.trim();
+  const ktGreidslu = document.getElementById("kt-greidslu").value.trim();
+  const msg = document.getElementById("formMsg");
+  const btn = document.getElementById("submitBtn");
+  msg.className = "form-msg";
+
+  if (!nafnForeldri) { msg.className = "form-msg error"; msg.textContent = "Vinsamlegast skráðu nafn foreldris / forráðamanns."; return; }
+  if (!simi) { msg.className = "form-msg error"; msg.textContent = "Vinsamlegast skráðu símanúmer."; return; }
+  if (!validateKt(ktGreidslu)) { msg.className = "form-msg error"; msg.textContent = "Kennitala greiðanda er ekki gild."; return; }
+  if (children.length === 0) { msg.className = "form-msg error"; msg.textContent = "Vinsamlegast bættu við barni."; return; }
+
+  const bornData = [];
+  for (let i = 0; i < children.length; i++) {
+    const child = children[i];
+    const nafn = document.getElementById("nafn-" + child.id).value.trim();
+    const kt = document.getElementById("kt-" + child.id).value.trim();
+    if (!nafn) { msg.className = "form-msg error"; msg.textContent = `Vantar nafn á barni ${i + 1}.`; return; }
+    if (!validateKt(kt)) { msg.className = "form-msg error"; msg.textContent = `Kennitala barns ${i + 1} er ekki gild.`; return; }
+    bornData.push({ nafn, kennitala: kt.replace(/\D/g, "") });
+  }
+
+  btn.disabled = true;
+  btn.textContent = "Skrái...";
+
+  const total = children.length * PRICE;
+
+  try {
+    await addDoc(collection(db, "haustskraning2026"), {
+      nafnForeldri,
+      simi,
+      kennitaluGreidslu: ktGreidslu.replace(/\D/g, ""),
+      born: bornData,
+      fjoldiBarna: bornData.length,
+      heildarverd: total,
+      skrad: serverTimestamp()
+    });
+    msg.className = "form-msg success";
+    msg.innerHTML = `Skráning móttekin! ${bornData.map(b => b.nafn).join(" og ")} ${bornData.length > 1 ? "eru" : "er"} skráð á haustönn.<br><br>
+      Vinsamlegast greiddu <strong>${total.toLocaleString("is-IS")} kr.</strong> inn á reikning Umf. Fram:<br>
+      <strong>0160-26-000123</strong> &nbsp;·&nbsp; kt. <strong>461191-1189</strong>`;
+    btn.textContent = "Skráð!";
+  } catch (e) {
+    msg.className = "form-msg error";
+    msg.textContent = "Villa kom upp. Reyndu aftur eða hafðu samband við okkur.";
+    btn.disabled = false;
+    btn.textContent = "Skrá";
+  }
+};
+
+addChild();
+</script>
+
+</body>
+</html>
