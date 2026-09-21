@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/images/android-chrome-512x512.png">
+<title>Íþróttavika Evrópu 2026 - Umf. Fram á Skagaströnd</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    background: #f5e400;
+    color: #000;
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+
+  /* Header */
+  .header {
+    background: #002c98;
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .header-logo { width: 64px; height: auto; flex-shrink: 0; }
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+  }
+  .header-eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: rgba(255,255,255,0.65);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .header h1 {
+    font-size: clamp(22px, 5vw, 48px);
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .header-sub {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.65);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  /* Layout */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 20px 48px;
+  }
+
+  .intro {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px 20px;
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+  .intro p + p { margin-top: 10px; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #002c98;
+    margin-bottom: 12px;
+  }
+
+  /* Dagskrá */
+  .events {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .event {
+    background: #002c98;
+    color: #fff;
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 6px 20px;
+    align-items: baseline;
+  }
+  .event-name {
+    font-size: clamp(17px, 3.4vw, 22px);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #f5e400;
+  }
+  .event-body { font-size: 14.5px; }
+  .event-when { display: block; font-weight: 700; margin-bottom: 2px; }
+  .event-host {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+  }
+  .event.tbd { background: #2a3f7a; }
+
+  @media (max-width: 600px) {
+    .event { grid-template-columns: 1fr; gap: 4px; }
+  }
+
+  .note {
+    margin-top: 24px;
+    background: #fff;
+    border-left: 5px solid #002c98;
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 14px;
+  }
+
+  .footer {
+    margin-top: 36px;
+    text-align: center;
+    font-size: 13px;
+    color: #444;
+  }
+  .footer a { color: #002c98; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <a href="/"><img class="header-logo" src="/images/android-chrome-512x512.png" alt="Umf. Fram á Skagaströnd"></a>
+  <div class="header-text">
+    <div class="header-eyebrow">Be Active</div>
+    <h1>ÍÞRÓTTAVIKA EVRÓPU</h1>
+    <div class="header-sub">22.-29. september 2026</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="intro">
+    <p>Íþróttavika Evrópu (BeActive) verður haldin á Skagaströnd enn eitt árið. Boðið verður upp á fjölbreytta viðburði fyrir alla aldurshópa og við hvetjum alla til að mæta á sem flesta þeirra.</p>
+    <p>Sumt er eingöngu ætlað börnum og fer fram á skólatíma, en flestir viðburðir eru opnir öllum. Áherslan er á að kynna íþróttir fyrir fólki sem vill bæta heilsuna, prófa eitthvað nýtt eða bara rifja upp gamla takta.</p>
+  </div>
+
+  <div class="section-label">Dagskrá</div>
+
+  <div class="events">
+
+    <div class="event">
+      <div class="event-name">Kraftlyftingar</div>
+      <div class="event-body">
+        <span class="event-when">Þriðjudaginn 22. sept.</span>
+        Erindi í skóla og kennsla í lyftingasal fyrir fullorðna kl. 17-19.
+        <span class="event-host">Umsjón: Lára Bogey Finnbogadóttir</span>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-name">Júdó</div>
+      <div class="event-body">
+        <span class="event-when">Miðvikudag og fimmtudag kl. 11-14</span>
+        Miðvikudaginn kl. 11-14 fyrir yngsta stig, fimmtudaginn kl. 11-14 fyrir miðstig og unglingastig.
+        <span class="event-host">Umsjón: Annika Líf Maríudóttir Noack, þjálfari júdódeildar Tindastóls</span>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-name">Göngubolti</div>
+      <div class="event-body">
+        <span class="event-when">Miðvikudaginn 23. sept. kl. 18-19</span>
+        Í íþróttahúsinu. Fyrir alla. Fótbolti nema bannað að hlaupa!
+        <span class="event-host">Umsjón: stjórn Fram</span>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-name">Golf</div>
+      <div class="event-body">
+        <span class="event-when">Fimmtudaginn 24. sept.</span>
+        5.-7. bekkur kl. 16, 8.-10. bekkur kl. 17-18. Á golfvellinum.
+        <span class="event-host">Umsjón: Finnbogi Guðmundsson</span>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-name">Píla</div>
+      <div class="event-body">
+        <span class="event-when">Föstudaginn 25. sept.</span>
+        Pílumót fyrir alla aldurshópa. Staðsetning auglýst síðar.
+        <span class="event-host">Umsjón: Ingimar Vignisson</span>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-name">Frisbígolf</div>
+      <div class="event-body">
+        <span class="event-when">Laugardaginn 26. sept. kl. 13</span>
+        Mæting við fyrstu holu. Fyrir alla.
+        <span class="event-host">Umsjón: Garðar Grétarsson</span>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-name">Betri svefn</div>
+      <div class="event-body">
+        <span class="event-when">Mánudaginn 28. sept. kl. 20</span>
+        Betri svefn með Dr. Erlu Björnsdóttur. Í Bjarmanesi.
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-name">Pickleball</div>
+      <div class="event-body">
+        <span class="event-when">Þriðjudaginn 29. sept.</span>
+        Kl. 18-19 fyrir krakka, kl. 19-20 fyrir fullorðna. Inni í íþróttahúsi eða úti á velli.
+        <span class="event-host">Umsjón: Arnar Viggósson</span>
+      </div>
+    </div>
+
+    <div class="event tbd">
+      <div class="event-name">Rafíþróttir</div>
+      <div class="event-body">
+        <span class="event-when">Tímasetning óvís</span>
+        FIFA-mót í PlayStation.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note">
+    Sumt er eingöngu ætlað börnum og fer fram á skólatíma, en flestir viðburðir eru opnir öllum. Sjáumst!
+  </div>
+
+  <div class="footer">
+    <a href="https://beactive.is" target="_blank" rel="noopener">beactive.is</a>
+    &nbsp;·&nbsp;
+    <a href="/">Umf. Fram á Skagaströnd</a>
+  </div>
+</div>
+
+</body>
+</html>
