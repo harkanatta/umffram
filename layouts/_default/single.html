@@ -23,10 +23,12 @@
       {{ end }}
     </header>
 
+    {{ if not .Params.omit_featured_image }}
     {{ with .Params.featured_image }}
     <div class="w-100 mb4">
       <img src="{{ . }}" alt="{{ $.Title }}" style="width:100%;max-height:480px;object-fit:cover;border-radius:8px;">
     </div>
+    {{ end }}
     {{ end }}
 
     <div class="nested-copy-line-height lh-copy {{ $.Param "post_content_classes" | default "serif"}} f4 nested-links {{ $.Param "text_color" | default "mid-gray" }} pr4-l w-two-thirds-l">
