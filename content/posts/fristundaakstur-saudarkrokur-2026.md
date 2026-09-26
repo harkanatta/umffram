@@ -3,6 +3,7 @@ title = "Frístundaakstur á æfingar á Sauðárkróki"
 date = 2026-09-26T00:00:00Z
 draft = false
 description = "Krakkar á Skagaströnd geta nýtt rútuferðir Húnabyggðar á æfingar hjá Tindastóli. Skráning í síðasta lagi 29. september."
+featured_image = "/images/fristundaakstur-banner.png"
 +++
 
 Húnabyggð hefur hlotið styrk til að bjóða upp á rútuferðir frá Blönduósi á íþróttaæfingar á Sauðárkróki. Okkur á Skagaströnd býðst að taka þátt. Fyrirkomulagið gildir fram að jólum og verður þá metið og endurskoðað.
