@@ -6,7 +6,7 @@ description = "Krakkar á Skagaströnd geta nýtt rútuferðir Húnabyggðar á 
 featured_image = "/images/fristundaakstur-banner.png"
 +++
 
-Húnabyggð hefur hlotið styrk til að bjóða upp á rútuferðir frá Blönduósi á íþróttaæfingar á Sauðárkróki. Okkur á Skagaströnd býðst að taka þátt. Fyrirkomulagið gildir fram að jólum og verður þá metið og endurskoðað.
+Húnabyggð hefur hlotið styrk til að bjóða upp á rútuferðir frá Blönduósi á fótboltaæfingar á Sauðárkróki. Okkur á Skagaströnd býðst að taka þátt. Fyrirkomulagið gildir fram að jólum og verður þá metið og endurskoðað.
 
 ### Hvernig virkar þetta fyrir Skagaströnd?
 
