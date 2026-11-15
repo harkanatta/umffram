@@ -51,5 +51,3 @@ Ungmennafélagið Fram á Skagaströnd fagnar aldarafmæli sínu í ár. Félagi
 Á hátíðinni verður litið yfir farinn veg, rifjaðar upp minningar úr starfi félagsins í gegnum árin og horft til framtíðar. Við hvetjum fólk á öllum aldri til að koma, hitta gamla félaga og eiga góða stund saman.
 
 **Allir eru velkomnir.**
-
-[Prenta boðskort (PDF, A4)](/documents/afmaeli-100-ara-bodskort.pdf)
