@@ -9,7 +9,6 @@ draft = false
 | Nafn | Hlutverk |
 |------|----------|
 | Valtýr Sigurðsson | Stjórnarformaður |
-| Guðlaugur Siggi Hannesson | Gjaldkeri |
 | Ingimar Vignisson | Ritari |
 | Garðar Grétarsson | Stjórnarmaður |
 | Arnar Ólafur Viggósson | Stjórnarmaður |
