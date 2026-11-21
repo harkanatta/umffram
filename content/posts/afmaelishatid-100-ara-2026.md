@@ -3,7 +3,7 @@ title = "Ungmennafélagið Fram fagnar 100 ára afmæli"
 date = 2026-11-15T12:00:00Z
 draft = false
 featured_image = "/images/afmaeli-100-ara-2026.png"
-description = "Afmælishátíð í Fellsborg sunnudaginn 29. nóvember 2026 kl. 14–17. Léttar veitingar í boði og ræðuhöld kl. 15. Allir eru velkomnir."
+description = "Afmælishátíð í Fellsborg sunnudaginn 29. nóvember 2026 kl. 14–17. Léttar veitingar í boði og ræðuhöld kl. 14:15. Verið velkomin."
 +++
 
 Ungmennafélagið Fram á Skagaströnd fagnar aldarafmæli sínu í ár. Félagið var stofnað árið 1926 og hefur í heila öld verið miðpunktur íþrótta- og félagslífs á Skagaströnd.
@@ -42,12 +42,12 @@ Ungmennafélagið Fram á Skagaströnd fagnar aldarafmæli sínu í ár. Félagi
     <img class="afm-photo" src="/images/afmaeli-100-ara-hlaup.jpg" alt="Hlauparar á hlaupabraut á Skagaströnd. Ljósmyndasafn Skagastrandar.">
     <p class="afm-body">Í tilefni af aldarafmæli ungmennafélagsins Fram býður stjórn félagsins öllum félögum og velunnurum til afmælishátíðar í Fellsborg</p>
     <hr class="afm-rule">
-    <p class="afm-details">Sunnudaginn 29. nóvember 2026<br>kl. 14:00 – 17:00<br><br>Léttar veitingar í boði &nbsp;·&nbsp; Ræðuhöld kl. 15</p>
+    <p class="afm-details">Sunnudaginn 29. nóvember 2026<br>kl. 14:00 – 17:00<br><br>Léttar veitingar í boði &nbsp;·&nbsp; Ræðuhöld kl. 14:15</p>
     <hr class="afm-rule">
-    <p class="afm-foot">Allir eru velkomnir</p>
+    <p class="afm-foot">Verið velkomin</p>
   </div>
 </div>
 
 Á hátíðinni verður litið yfir farinn veg, rifjaðar upp minningar úr starfi félagsins í gegnum árin og horft til framtíðar. Við hvetjum fólk á öllum aldri til að koma, hitta gamla félaga og eiga góða stund saman.
 
-**Allir eru velkomnir.**
+**Verið velkomin.**
